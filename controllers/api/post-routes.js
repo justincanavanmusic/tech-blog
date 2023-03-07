@@ -13,4 +13,26 @@ router.post('/', async (req, res) => {
     }
   });
 
+  router.put('/:id', async (req, res) => {
+
+    try {
+      const post = await Post.update(
+        {
+          title: req.body.title,
+          body: req.body.body,
+        },
+        {
+          where: {
+            id: req.params.id,
+          },
+        }
+      );
+      // If the database is updated successfully, what happens to the updated data below?
+      // The updated data (dish) is then sent back to handler that dispatched the fetch request.
+      res.status(200).json(dish);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
   module.exports = router;

@@ -1,7 +1,7 @@
 async function addCommentForm(event) {
     event.preventDefault();
   
-    const comment = document.querySelector('#comment').value;
+    const body = document.querySelector('#comment').value;
   
   
     const response = await fetch(`/api/post`, {
@@ -22,5 +22,5 @@ async function addCommentForm(event) {
   }
   
   document
-    .querySelector('.new-post-form')
+    .querySelector('.new-comment-form')
     .addEventListener('submit', addCommentForm);

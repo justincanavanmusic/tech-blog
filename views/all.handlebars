@@ -74,6 +74,46 @@
   </div>
 </div>
 
+          {{!-- EDIT POST --}}
+<div class="menu-container">
+  <div class="card-header col-md-12 text-center">
+    <h2>
+      Your Dashboard
+    </h2>
+  {{!-- </div> --}}
+
+            {{!--EDIT post --}}
+  <div class="edit-post-container">
+    <h2>
+      Edit Post
+    </h2>
+    <form class="edit-post-form">
+      <label for="post">
+        Title
+      </label>
+      <br />
+      <textarea id="title" name="title" rows="2" cols="30">
+      {{title}}
+    </textarea>
+      <br />
+            {{!-- content --}}
+      <label for="content">
+        Content:
+      </label>
+      <br />
+      <textarea id="content" name="content" rows="5" cols="30">
+      {{content}}
+    </textarea>
+      <br />
+     
+      <button type="submit" value="edit-submit">
+        Submit
+      </button>
+    </form>
+    </div>
+  </div>
+</div>
+
 <script src="/js/add-post.js"></script>
 <script src="/js/add-comment.js"></script>
 

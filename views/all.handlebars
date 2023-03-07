@@ -15,3 +15,65 @@
     
 {{/each}}
 
+          {{!-- ADD POST --}}
+<div class="menu-container">
+  <div class="card-header col-md-12 text-center">
+    <h2>
+      Your Dashboard
+    </h2>
+  {{!-- </div> --}}
+
+            {{!--create post --}}
+  <div class="add-post-container">
+    <h2>
+      Create New Post
+    </h2>
+    <form class="new-post-form">
+      <label for="post">
+        Title
+      </label>
+      <br />
+      <textarea id="title" name="title" rows="2" cols="30">
+      {{title}}
+    </textarea>
+      <br />
+            {{!-- content --}}
+      <label for="content">
+        Content:
+      </label>
+      <br />
+      <textarea id="content" name="content" rows="5" cols="30">
+      {{content}}
+    </textarea>
+      <br />
+     
+      <button type="submit" value="Submit">
+        Submit
+      </button>
+    </form>
+    </div>
+  </div>
+</div>
+          {{!-- ADD COMMENTS --}}
+<div class="menu-container">
+  <div class="card-header col-md-12 text-center">
+      <form class="new-comment-form">
+      <label for="comment">
+        Comment:
+      </label>
+      <br />
+    <textarea id="comment" name="comment" rows="5" cols="30">
+    {{comment}}
+    </textarea>
+    <br />
+
+    <button type="submit" value="comment-submit">
+      Submit
+    </button>
+    </form>
+  </div>
+</div>
+
+<script src="/js/add-post.js"></script>
+<script src="/js/add-comment.js"></script>
+

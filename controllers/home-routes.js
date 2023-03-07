@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const Post = require('../models/Post');
+const { Post, Comment, User }   = require('../models');
+
 
 const posts = [
     {
@@ -14,14 +15,16 @@ const posts = [
       body: 'I love cooking'
     },
 ]
-
-// router.get('/', async (req, res) => {
+//this displays added
+// router.get('/posts', async (req, res) => {  
 //   const postData = await Post.findAll().catch((err) => { 
 //       res.json(err);
 //     });
 //       const posts = postData.map((post) => post.get({ plain: true }));
 //       res.render('all', { posts });
 //     });
+
+//this displays already existing
 
 router.get('/', async (req, res) => {
     res.render('all', { posts });

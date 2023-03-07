@@ -1,6 +1,14 @@
 const router = require('express').Router();
 const Post = require('../../models/Post');
 
+router.get('/posts', async (req, res) => {
+  const postData = await Post.findAll().catch((err) => { 
+      res.json(err);
+    });
+      const posts = postData.map((post) => post.get({ plain: true }));
+      res.render('all', { posts });
+    });
+
 router.post('/', async (req, res) => {
     try {
       const postData = await Post.create({
@@ -27,8 +35,7 @@ router.post('/', async (req, res) => {
           },
         }
       );
-      // If the database is updated successfully, what happens to the updated data below?
-      // The updated data (dish) is then sent back to handler that dispatched the fetch request.
+     
       res.status(200).json(post);
     } catch (err) {
       res.status(500).json(err);

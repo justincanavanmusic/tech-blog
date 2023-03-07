@@ -1,7 +1,7 @@
 async function editPostForm(event) {
     event.preventDefault();
   
-    const title = document.querySelector('#post_name').value;
+    const title = document.querySelector('#title').value;
     const body = document.querySelector('#content').value;
 
 

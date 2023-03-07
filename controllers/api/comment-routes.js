@@ -1,6 +1,14 @@
 const router = require('express').Router();
 const Comment = require('../../models/Comment');
 
+router.get('/comments', async (req, res) => {
+  const commentData = await Comment.findAll().catch((err) => { 
+      res.json(err);
+    });
+      const comments = commentData.map((comment) => comment.get({ plain: true }));
+      res.render('all', { comments });
+    });
+
 router.post('/', async (req, res) => {
     try {
       const commentData = await Comment.create({

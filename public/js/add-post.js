@@ -1,7 +1,7 @@
 async function addPostForm(event) {
   event.preventDefault();
 
-  const title = document.querySelector('#post_name').value;
+  const title = document.querySelector('#title').value;
   const body = document.querySelector('#content').value;
 
   const response = await fetch(`/api/post`, {

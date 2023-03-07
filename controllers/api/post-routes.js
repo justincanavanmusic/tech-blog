@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Post = require('../../models/Post');
 
-router.get('/posts', async (req, res) => {
+router.get('/', async (req, res) => {
   const postData = await Post.findAll().catch((err) => { 
       res.json(err);
     });
@@ -22,7 +22,6 @@ router.post('/', async (req, res) => {
   });
 
   router.put('/:id', async (req, res) => {
-
     try {
       const post = await Post.update(
         {

@@ -10,6 +10,7 @@ router.get('/', async (req, res) => {
       res.render('all', { posts });
     });
 
+
 //this displays already existing
 
 // router.get('/', async (req, res) => {

@@ -38,11 +38,14 @@
   </div>
 </div>
 
+ {{#each comments as | comment | }}
 <div>
-  {{#each comments as | comment | }}
-  <p>{{ comment.body }}</p>
-  {{/each}}
+ <ul class="list-group">
+  <li class="list-group-item">{{comment.body}}</li>
+</ul>
 </div>
+{{/each}}
+
 
 <div class="menu-container">
   <div class="card-header col-md-12 text-center">

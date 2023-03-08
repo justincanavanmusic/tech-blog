@@ -26,7 +26,6 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      // TODO: Once the user successfully logs in, set up sessions with the 'loggedIn' variable
       req.session.loggedIn = true;
       res
         .status(200)

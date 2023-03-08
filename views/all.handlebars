@@ -2,62 +2,22 @@
 
  {{#each posts as |post|}}
 
-</div>
+
 <div class="list-group">
   <a href="/post/{{post.id}}" class="list-group-item list-group-item-action active" aria-current="true">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{post.title}}</h5>
-      <small>3 days ago</small>
+      <small>Posted by {{User.username}} at {{post.createdAt}} </small>
     </div>
     <p class="mb-1">{{post.body}}</p>
   </a>
   <br>
+</div>
     
 {{/each}}
 
-          {{!-- ADD POST --}}
-<div class="menu-container">
-  <div class="card-header col-md-12 text-center">
-    <h2>
-      Your Dashboard
-    </h2>
-  {{!-- </div> --}}
 
-            {{!--create post --}}
-  <div class="add-post-container">
-    <h2>
-      Create New Post
-    </h2>
-    <form class="new-post-form">
-      <label for="post">
-        Title
-      </label>
-      <br />
-      <textarea id="title" name="title" rows="2" cols="30">
-      {{title}}
-    </textarea>
-      <br />
-            {{!-- content --}}
-      <label for="content">
-        Content:
-      </label>
-      <br />
-      <textarea id="content" name="content" rows="5" cols="30">
-      {{content}}
-    </textarea>
-      <br />
-     
-      <button type="submit" value="Submit">
-        Submit
-      </button>
-    </form>
-    </div>
-  </div>
-</div>
-          {{!-- ADD COMMENTS --}}
-
-          {{!-- login --}}
-
+ 
 
 <script src="/js/add-post.js"></script>
 {{!-- <script src="/js/add-comment.js"></script> --}}

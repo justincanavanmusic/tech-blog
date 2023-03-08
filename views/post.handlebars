@@ -38,4 +38,30 @@
   </div>
 </div>
 
+<div>
+  {{#each comments as | comment | }}
+  <p>{{ comment.body }}</p>
+  {{/each}}
+</div>
+
+<div class="menu-container">
+  <div class="card-header col-md-12 text-center">
+      <form class="new-comment-form">
+      <label for="comment">
+        Comment:
+      </label>
+      <br />
+    <textarea id="comment" name="comment" rows="5" cols="30">
+    {{comment}}
+    </textarea>
+    <br />
+
+    <button type="submit" value="comment-submit">
+      Submit
+    </button>
+    </form>
+  </div>
+</div>
+
 <script src="/js/edit-post.js"></script>
+<script src="/js/add-comment.js"></script>

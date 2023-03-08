@@ -12,14 +12,16 @@ router.get('/', async (req, res) => {
 
 router.get('/post/:id', async (req, res) => {
   try{ 
-      const postData = await Post.findByPk(req.params.id);
+      const postData = await Post.findByPk(req.params.id, { include: Comment })
       if(!postData) {
-          res.status(404).json({message: 'No dish with this id!'});
+          res.status(404).json({message: 'No post with this id!'});
           return;
       }
       const post = postData.get({ plain: true });
+      console.log(post);
       res.render('post', post);
     } catch (err) {
+      console.log(err)
         res.status(500).json(err);
     };     
 });
@@ -55,12 +57,5 @@ router.post('/logout', (req, res) => {
   }
 });
 
-
-
-//this displays already existing
-
-// router.get('/', async (req, res) => {
-//     res.render('all', { posts });
-// });
 
 module.exports = router;

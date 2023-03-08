@@ -4,7 +4,7 @@
 
 </div>
 <div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+  <a href="/post/{{post.id}}" class="list-group-item list-group-item-action active" aria-current="true">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{post.title}}</h5>
       <small>3 days ago</small>
@@ -55,29 +55,12 @@
   </div>
 </div>
           {{!-- ADD COMMENTS --}}
-<div class="menu-container">
-  <div class="card-header col-md-12 text-center">
-      <form class="new-comment-form">
-      <label for="comment">
-        Comment:
-      </label>
-      <br />
-    <textarea id="comment" name="comment" rows="5" cols="30">
-    {{comment}}
-    </textarea>
-    <br />
 
-    <button type="submit" value="comment-submit">
-      Submit
-    </button>
-    </form>
-  </div>
-</div>
           {{!-- login --}}
 
 
 <script src="/js/add-post.js"></script>
-<script src="/js/add-comment.js"></script>
+{{!-- <script src="/js/add-comment.js"></script> --}}
 
 
 

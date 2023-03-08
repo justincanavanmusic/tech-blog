@@ -46,16 +46,12 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-router.post('/logout', (req, res) => {
-  // When the user logs out, the session is destroyed
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
+router.get('/dashboard', async (req, res) => {  
+  const commentData = await Comment.findAll().catch((err) => { 
+      res.json(err);
     });
-  } else {
-    res.status(404).end();
-  }
-});
+      const comments = commentData.map((comment) => comment.get({ plain: true }));
+      res.render('all', { comments });
+    });
 
-
-module.exports = router;
+module.exports= router;

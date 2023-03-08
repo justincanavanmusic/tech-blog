@@ -24,6 +24,38 @@ router.get('/post/:id', async (req, res) => {
     };     
 });
 
+router.get('/login', (req, res) => {
+ 
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  // Otherwise, render the 'login' template
+  res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+ 
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  // Otherwise, render the 'login' template
+  res.render('signup');
+});
+
+router.post('/logout', (req, res) => {
+  // When the user logs out, the session is destroyed
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
+
 
 //this displays already existing
 

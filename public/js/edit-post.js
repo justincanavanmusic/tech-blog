@@ -2,7 +2,7 @@ async function editPostForm(event) {
     event.preventDefault();
   
     const title = document.querySelector('#title').value;
-    const body = document.querySelector('#content').value;
+    const body = document.querySelector('#body').value;
 
 
     const id = window.location.toString().split('/')[
@@ -22,7 +22,7 @@ async function editPostForm(event) {
   
 
     if (response.ok) {
-      document.location.replace(`/post/${id}`);
+      document.location.replace(`/dashboard`);
     } else {
       alert('Failed to edit post');
     }

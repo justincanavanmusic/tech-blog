@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 // 
 //this displays added
 
-router.get('/', withAuth, async (req, res) => {  
+router.get('/', async (req, res) => {  
   try {
     const postData = await Post.findAll({
       include: [
@@ -72,7 +72,7 @@ router.get('/signup', (req, res) => {
 
 
 
-router.get('/dashboard', withAuth, async (req, res) => {  
+router.get('/dashboard', async (req, res) => {  
   const postData = await Post.findAll({
     include: [
       User,

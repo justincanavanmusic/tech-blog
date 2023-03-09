@@ -56,7 +56,6 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-  // Otherwise, render the 'login' template
   res.render('login');
 });
 
@@ -66,7 +65,7 @@ router.get('/signup', (req, res) => {
     res.redirect('/');
     return;
   }
-  // Otherwise, render the 'login' template
+  
   res.render('signup');
 });
 
@@ -92,15 +91,5 @@ router.get('/dashboard', async (req, res) => {
       res.render('dashboard', { posts });
     });
 
-// router.get('/dashboard', async (req, res) => {  
-//   const postData = await Post.findAll({
-//     include: [{ model: User }]
-//   }).catch((err) => { 
-//     res.json(err);
-//   });
-//       const posts = postData.map((post) => post.get({ plain: true }));
-    
-//       res.render('dashboard', { posts });
-//     });
 
 module.exports= router;

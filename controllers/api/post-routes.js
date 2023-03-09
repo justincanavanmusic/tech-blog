@@ -69,7 +69,6 @@ router.post('/', async (req, res) => {
       }
   
       req.session.save(() => {
-        // TODO: Once the user successfully logs in, set up sessions with the 'loggedIn' variable
         req.session.loggedIn = true;
         res
           .status(200)
@@ -80,5 +79,26 @@ router.post('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const projectData = await Post.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+
+    if (!projectData) {
+      res.status(404).json({ message: 'No post found with this id!' });
+      return;
+    }
+
+    res.status(200).json(projectData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
   module.exports = router;

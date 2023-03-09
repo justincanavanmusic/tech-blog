@@ -5,8 +5,18 @@ const { Post, Comment, User }   = require('../models');
 
 router.get('/', async (req, res) => {  
   try {
-    const postData = await Post.findAll();
+    const postData = await Post.findAll({
+      include: [
+        User,
+        { 
+          model: Comment, 
+          include: [User]
+        }
+      ]
+    });
+    
     const posts = postData.map((post) => post.get({ plain: true }));
+    console.log(posts)
     const loggedIn = req.session.loggedIn; 
     res.render('all', { posts, loggedIn }); 
   } catch (err) {
@@ -15,32 +25,23 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/users', async (req, res) => {  
-  try {
-    const userData = await User.findAll({
-      include: [{ model: Post, include: Comment }]
-    });
-    const users = userData.map((user) => user.get({ plain: true }));
-    console.log(users)
-    res.render('user', { users }); 
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
 router.get('/post/:id', async (req, res) => {
   try{ 
-      const postData = await Post.findByPk(req.params.id, { include: [Comment] })
+      const postData = await Post.findByPk(req.params.id, { 
+        include: [
+          User, 
+          { model: Comment, 
+          include: [User]
+        }
+        
+        ]
+       })
       if(!postData) {
           res.status(404).json({message: 'No post with this id!'});
           return;
       }
       const post = postData.get({ plain: true });
-      console.log(post.createdAt);
-      
-    
-      console.log(post);
+
       res.render('post', post);
     } catch (err) {
       console.log(err)
@@ -70,6 +71,26 @@ router.get('/signup', (req, res) => {
 
 
 
+router.get('/dashboard', async (req, res) => {  
+  const postData = await Post.findAll({
+    include: [
+      User,
+      { 
+        model: Comment, 
+        include: [User]
+      }
+    ]
+  }).catch((err) => { 
+    res.json(err);
+  });
+
+      const posts = postData.map((post) => post.get({ plain: true }));
+      
+      // posts.forEach(post => console.log(post.User.username));
+      // console.log(posts.User.username);
+      res.render('dashboard', { posts });
+    });
+
 // router.get('/dashboard', async (req, res) => {  
 //   const postData = await Post.findAll({
 //     include: [{ model: User }]
@@ -80,16 +101,5 @@ router.get('/signup', (req, res) => {
     
 //       res.render('dashboard', { posts });
 //     });
-
-router.get('/dashboard', async (req, res) => {  
-  const postData = await Post.findAll({
-    include: [{ model: User }]
-  }).catch((err) => { 
-    res.json(err);
-  });
-      const posts = postData.map((post) => post.get({ plain: true }));
-    
-      res.render('dashboard', { posts });
-    });
 
 module.exports= router;

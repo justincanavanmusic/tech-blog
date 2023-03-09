@@ -1,3 +1,9 @@
+<div class="menu-container">
+  <div class="card-header col-md-12 text-center">
+    <h2>
+      Your Dashboard
+    </h2>
+
 {{#each posts as |post|}}
 
 
@@ -5,7 +11,7 @@
   <a href="/post/{{post.id}}" class="list-group-item list-group-item-action active" aria-current="true">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{post.title}}</h5>
-      <small>Posted by {{user.username}} at {{post.createdAt}}</small>
+      <small>Posted by {{post.User.username}} at {{format_date post.createdAt}}</small>
     </div>
     <p class="mb-1">{{post.body}}</p>
   </a>
@@ -14,12 +20,7 @@
     
 {{/each}}
 
-          {{!-- ADD POST --}}
-<div class="menu-container">
-  <div class="card-header col-md-12 text-center">
-    <h2>
-      Your Dashboard
-    </h2>
+
   {{!-- </div> --}}
 
             {{!--create post --}}

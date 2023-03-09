@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Post, Comment, User }   = require('../models');
-const withAuth = require('../utils/auth');
+// const withAuth = require('../utils/auth');
 // 
 //this displays added
 
@@ -87,11 +87,11 @@ router.get('/dashboard', async (req, res) => {
   });
 
       const posts = postData.map((post) => post.get({ plain: true }));
-      // const loggedIn = req.session.loggedIn; 
+      const loggedIn = req.session.loggedIn; 
       
       // posts.forEach(post => console.log(post.User.username));
       // console.log(posts.User.username);
-      res.render('dashboard', { posts });
+      res.render('dashboard', { posts, loggedIn });
     });
 
 

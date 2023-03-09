@@ -4,17 +4,13 @@ const sequelize = require('../config/config');
 class Post extends Model {}
 
 Post.init(
-  {
-    title: DataTypes.STRING,
-    body: DataTypes.STRING
-  },
-  {
-    sequelize,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'post',
-  }
-  
+    {
+        title: DataTypes.STRING,
+        body: DataTypes.STRING,
+    },
+    {
+        sequelize,
+    }
 );
 
 module.exports = Post;

@@ -10,6 +10,11 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+  // await Comment.bulkCreate(postData, {
+  //   individualHooks: true,
+  //   returning: true,
+  // })
+
   process.exit(0);
 };
 

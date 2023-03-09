@@ -15,6 +15,19 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/users', async (req, res) => {  
+  try {
+    const userData = await User.findAll({
+      include: [{ model: Post, include: Comment }]
+    });
+    const users = userData.map((user) => user.get({ plain: true }));
+    console.log(users)
+    res.render('user', { users }); 
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 router.get('/post/:id', async (req, res) => {
   try{ 
@@ -24,6 +37,7 @@ router.get('/post/:id', async (req, res) => {
           return;
       }
       const post = postData.get({ plain: true });
+      console.log(post.createdAt);
       
     
       console.log(post);
@@ -55,6 +69,17 @@ router.get('/signup', (req, res) => {
 });
 
 
+
+// router.get('/dashboard', async (req, res) => {  
+//   const postData = await Post.findAll({
+//     include: [{ model: User }]
+//   }).catch((err) => { 
+//     res.json(err);
+//   });
+//       const posts = postData.map((post) => post.get({ plain: true }));
+    
+//       res.render('dashboard', { posts });
+//     });
 
 router.get('/dashboard', async (req, res) => {  
   const postData = await Post.findAll({

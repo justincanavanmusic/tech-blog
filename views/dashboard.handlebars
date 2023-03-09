@@ -13,10 +13,12 @@
       <small>Posted by {{post.User.username}} at {{format_date post.createdAt}}</small>
     </div>
     <p class="mb-1">{{post.body}}</p>
-    <div class="col-md-6 post-list"></div>
-    <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
-    </div>
+   
+   
   </a>
+   <div class="col-md-6 post-list">
+   <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+   </div>
   <br>
 </div>
     
@@ -62,3 +64,4 @@
 
 
 <script src="/js/add-post.js"></script>
+<script src="/js/dashboard.js"></script>

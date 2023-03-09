@@ -42,8 +42,10 @@ router.get('/post/:id', async (req, res) => {
           return;
       }
       const post = postData.get({ plain: true });
-
-      res.render('post', post);
+      console.log(post)
+      const loggedIn = req.session.loggedIn; 
+      // res.render('post', post);
+      res.render('post', { post, loggedIn }); 
     } catch (err) {
       console.log(err)
         res.status(500).json(err);
@@ -85,6 +87,7 @@ router.get('/dashboard', async (req, res) => {
   });
 
       const posts = postData.map((post) => post.get({ plain: true }));
+      // const loggedIn = req.session.loggedIn; 
       
       // posts.forEach(post => console.log(post.User.username));
       // console.log(posts.User.username);

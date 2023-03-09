@@ -41,6 +41,10 @@ async function addPostForm(event) {
     .querySelector('.new-post-form')
     .addEventListener('submit', addPostForm);
 
-    document
-  .querySelector('.post-list')
-  .addEventListener('click', deleteButton);
+   var buttonEls = document
+  .querySelectorAll('.post-list')
+  for (let i = 0; i < buttonEls.length; i++) {
+  buttonEls[i].addEventListener('click', deleteButton);
+  }
+  // .addEventListener('click', deleteButton);
+ 

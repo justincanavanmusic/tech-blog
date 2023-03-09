@@ -18,14 +18,13 @@ router.get('/', async (req, res) => {
 
 router.get('/post/:id', async (req, res) => {
   try{ 
-      const postData = await Post.findByPk(req.params.id, { include: Comment, User })
+      const postData = await Post.findByPk(req.params.id, { include: [Comment] })
       if(!postData) {
           res.status(404).json({message: 'No post with this id!'});
           return;
       }
       const post = postData.get({ plain: true });
-      console.log(post)
-    
+      
     
       console.log(post);
       res.render('post', post);

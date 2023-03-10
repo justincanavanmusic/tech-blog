@@ -18,6 +18,7 @@ router.get('/', withAuth, async (req, res) => {
     
     const posts = postData.map((post) => post.get({ plain: true }));
     console.log(posts)
+    console.log(req.session)
     const loggedIn = req.session.loggedIn; 
     res.render('all', { posts, loggedIn }); 
   } catch (err) {
@@ -90,8 +91,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
       const posts = postData.map((post) => post.get({ plain: true }));
       const loggedIn = req.session.loggedIn; 
       
-      // posts.forEach(post => console.log(post.User.username));
-      // console.log(posts.User.username);
       res.render('dashboard', { posts, loggedIn });
     });
 

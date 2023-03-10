@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const { Post, Comment, User }   = require('../models');
-// const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 // 
 //this displays added
 
-router.get('/', async (req, res) => {  
+router.get('/', withAuth, async (req, res) => {  
   try {
     const postData = await Post.findAll({
       include: [
@@ -73,7 +73,7 @@ router.get('/signup', (req, res) => {
 
 
 
-router.get('/dashboard', async (req, res) => {  
+router.get('/dashboard', withAuth, async (req, res) => {  
   const postData = await Post.findAll({
     include: [
       User,

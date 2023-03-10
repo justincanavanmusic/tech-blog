@@ -43,9 +43,9 @@ router.get('/post/:id', async (req, res) => {
       }
       const post = postData.get({ plain: true });
       console.log(post)
-      const loggedIn = req.session.loggedIn; 
-      // res.render('post', post);
-      res.render('post', { post, loggedIn }); 
+      // const loggedIn = req.session.loggedIn; 
+      res.render('post', post);
+      // res.render('post', { post, loggedIn }); 
     } catch (err) {
       console.log(err)
         res.status(500).json(err);

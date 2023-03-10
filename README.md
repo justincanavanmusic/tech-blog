@@ -7,8 +7,7 @@ I wanted to create a tech blog site that would allow users to interact by being 
 ## Usage
 
 View video demonstration below:
-
-
+https://floating-fortress-15177.herokuapp.com/
 
 ![app screenshot](./Assets/Screenshot%202023-03-09%20at%206.54.51%20PM.png)
 

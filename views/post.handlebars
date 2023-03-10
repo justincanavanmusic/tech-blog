@@ -17,7 +17,7 @@
       </label>
       <br />
       <textarea id="title" name="title" rows="2" cols="30">
-      {{title}}
+      {{post.title}}
     </textarea>
       <br />
             {{!-- content --}}
@@ -26,7 +26,7 @@
       </label>
       <br />
       <textarea id="body" name="body" rows="5" cols="30">
-      {{body}}
+      {{post.body}}
     </textarea>
       <br />
      
@@ -37,7 +37,7 @@
 
 
 <h3>Comments: </h3>
- {{#each Comments as | comment | }}
+ {{#each post.Comments as | comment | }}
 <div>
  <ul class="list-group">
   <li class="list-group-item">{{comment.body}}</li>

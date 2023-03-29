@@ -1,49 +1,36 @@
           {{!-- EDIT POST --}}
 <div class="menu-container">
   <div class="card-header col-md-12 text-center">
-    <h2>
-      Your Dashboard
-    </h2>
+    <br>
   {{!-- </div> --}}
-
-            {{!--EDIT post --}}
   <div class="edit-post-container">
-    <h2>
-      Edit Post
-    </h2>
-    <form class="edit-post-form">
-      <label for="post">
-        Title
-      </label>
-      <br />
-      <textarea id="title" name="title" rows="2" cols="30">
-      {{post.title}}
-    </textarea>
-      <br />
-            {{!-- content --}}
-      <label for="body">
-        Content:
-      </label>
-      <br />
-      <textarea id="body" name="body" rows="5" cols="30">
-      {{post.body}}
-    </textarea>
-      <br />
+ 
+    <h5>Post Title:</h5>
+    <p>{{post.title}}</p> 
+    <h5>Post Content: </h5> 
+    <p>{{post.body}}</p>  
+    <h5>Posted By: </h5> 
+    <p>{{post.User.username}} on {{format_date post.createdAt}} </p>
      
-      <button type="submit" value="edit-submit">
+      {{!-- <button type="submit" value="edit-submit">
         Submit
-      </button>
-    </form>
+      </button> --}}
+    {{!-- </form> --}}
 
-
+{{#if post.Comments}}
 <h3>Comments: </h3>
+{{else}}
+{{/if}}
  {{#each post.Comments as | comment | }}
 <div>
  <ul class="list-group">
   <li class="list-group-item">{{comment.body}}</li>
-  <li class="list-group-item">Posted by: {{ User.username }}</li>
-  
+  <li class="list-group-item">Posted by: {{ User.username }}</li>  
 </ul>
+ </div>
+
+<div class="col-md-6 comment-list">
+  <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
 </div>
 
 
@@ -72,5 +59,6 @@
   </div>
 </div>
 
-<script src="/js/edit-post.js"></script>
+<script src="/js/post.js"></script>
 <script src="/js/add-comment.js"></script>
+{{!-- <script src="/js/edit-post-NEW.js"></script> --}}

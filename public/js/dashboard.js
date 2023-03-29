@@ -16,7 +16,7 @@ async function addPostForm(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/');
+      window.location.reload();
     } else {
       alert('Failed to add post');
     }
@@ -41,10 +41,16 @@ async function addPostForm(event) {
     .querySelector('.new-post-form')
     .addEventListener('submit', addPostForm);
 
-   var buttonEls = document
-  .querySelectorAll('.post-list')
-  for (let i = 0; i < buttonEls.length; i++) {
-  buttonEls[i].addEventListener('click', deleteButton);
-  }
+  //  var delBtnEls = document
+  // .querySelectorAll('.post-list')
+  // for (let i = 0; i < delBtnEls.length; i++) {
+  // delBtnEls[i].addEventListener('click', deleteButton);
+  // }
+  document
+  .querySelectorAll('.post-list').forEach(postlist=> {
+    postlist.addEventListener('click', deleteButton);
+  })
+
+
   // .addEventListener('click', deleteButton);
  

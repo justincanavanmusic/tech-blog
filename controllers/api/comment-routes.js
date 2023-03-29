@@ -1,14 +1,7 @@
 const router = require('express').Router();
 const Comment = require('../../models/Comment');
 
-router.get('/', async (req, res) => {
-  const commentData = await Comment.findAll().catch((err) => { 
-      res.json(err);
-    });
-      const comments = commentData.map((comment) => comment.get({ plain: true }));
-      res.render('all', { comments });
-    });
-
+//post route to create a comment
 router.post('/', async (req, res) => {
     try {
       const commentData = await Comment.create({
@@ -21,5 +14,45 @@ router.post('/', async (req, res) => {
       res.status(400).json(err);
     }
   });
+
+  //delete route to delete a comment based on the :id param
+  router.delete('/:id', async (req, res) => {
+    try {
+      const commentData = await Comment.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+  
+      if (!commentData) {
+        res.status(404).json({ message: 'No comment found with this id!' });
+        return;
+      }
+  
+      res.status(200).json(commentData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+            //COMMENT PUT ROUTE, MAYBE ADD THIS//
+  // router.put('/:id', async (req, res) => {
+  //   try {
+  //     const comment = await Comment.update(
+  //       {
+  //         body: req.body.body
+  //       },
+  //       {
+  //         where: {
+  //           id: req.params.id,
+  //         },
+  //       }
+  //     );
+     
+  //     res.status(200).json(comment);
+  //   } catch (err) {
+  //     res.status(500).json(err);
+  //   }
+  // });
 
   module.exports = router;

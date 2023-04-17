@@ -1,24 +1,63 @@
           {{!-- EDIT POST --}}
 <div class="menu-container">
-  <div class="card-header col-md-12 text-center">
+  <div class="card-header col-md-12">
     <br>
-  {{!-- </div> --}}
+
   <div class="edit-post-container">
+    <div class="row">
+    <div class="card pt-3 col-md-6 col-lg-6 text-center">
+            <h5>Post</h5> 
+           
+    <p>{{post.body}}</p> 
+     <hr>
+    <div class="d-flex">
+       <div class="d-block col-md-4 col-lg-4">
+    <h5>Post Title</h5>
+    <p>{{post.title}}</p>   
+    </div>
  
-    <h5>Post Title:</h5>
-    <p>{{post.title}}</p> 
-    <h5>Post Content: </h5> 
-    <p>{{post.body}}</p>  
-    <h5>Posted By: </h5> 
-    <p>{{post.User.username}} on {{format_date post.createdAt}} </p>
+    <div class="d-block col-md-4 col-lg-4">
+    <h5>Posted By</h5> 
+    <p>{{post.User.username}}</p>
+    </div>
+
+      <div class="d-block col-md-4 col-lg-4">
+    <h5>Date Posted:</h5> 
+    <p>{{format_date post.createdAt}} </p>
+    </div>
+    </div>
+
+
+
+    </div>
      
       {{!-- <button type="submit" value="edit-submit">
         Submit
       </button> --}}
     {{!-- </form> --}}
 
-{{#if post.Comments}}
-<h3>Comments: </h3>
+
+  <div class="card-header col-md-6 col-lg-6 text-center">
+      <form class="new-comment-form">
+      <h5 class='mb-3 mt-3' for="comment">
+       Add Comment
+      </h5>
+    
+    <textarea id="comment" name="comment" rows="5" cols="30">{{comment}}</textarea>
+    <br />
+
+    <button class="btn btn-primary mt-3" type="submit" value="comment-submit">
+      Submit
+    </button>
+    </form>
+  </div>
+    </div>
+  </div>
+
+  {{#if post.Comments}}
+  <div class="d-flex justify-content-center">
+<div class="col-md-8 col-lg-8"> 
+<h3 class="text-center mt-5">Comments</h3>
 {{else}}
 {{/if}}
  {{#each post.Comments as | comment | }}
@@ -33,31 +72,18 @@
   <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
 </div>
 
+<div class="col-md-6 comment-btn">
+  <button class="btn btn-sm btn-primary" data-id="{{comment.id}}">EDIT</button>
+</div>
+
+</div>
+</div>
+
 
 {{/each}}
-
-
-<div class="menu-container">
-  <div class="card-header col-md-12 text-center">
-      <form class="new-comment-form">
-      <label for="comment">
-       Add Comment:
-      </label>
-      <br />
-    <textarea id="comment" name="comment" rows="5" cols="30">
-    {{comment}}
-    </textarea>
-    <br />
-
-    <button type="submit" value="comment-submit">
-      Submit
-    </button>
-    </form>
-  </div>
 </div>
-    </div>
-  </div>
 </div>
+
 
 <script src="/js/post.js"></script>
 <script src="/js/add-comment.js"></script>

@@ -5,7 +5,6 @@ async function editPostForm(event) {
 
     const body = document.querySelector('#body').value.trim();
 
-
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
@@ -50,7 +49,16 @@ async function editPostForm(event) {
       }
     }
   };
-  
+
+  const commentButton = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+    document.location.href=`/edit-comment/${id}`
+  }
+}
+document.querySelectorAll('.comment-btn').forEach(commentBtn=> {
+  commentBtn.addEventListener('click', commentButton)
+})
 
 
   var delButtonEls = document
@@ -59,5 +67,5 @@ async function editPostForm(event) {
   delButtonEls[i].addEventListener('click', deleteButton);
   }
 
-  document.querySelector('.edit-post-form').addEventListener('submit', editPostForm);
+  // document.querySelector('.edit-post-form').addEventListener('submit', editPostForm);
   

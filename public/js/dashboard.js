@@ -42,6 +42,7 @@ async function addPostForm(event) {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
     document.location.href=`/edit-post/${id}`
+   
   }
 }
 

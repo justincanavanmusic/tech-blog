@@ -1,0 +1,37 @@
+<div class="menu-container">
+  <div class="card-header col-md-12 text-center">
+
+            {{!--EDIT post --}}
+  <div class="edit-comment-container">
+    <h2>
+      Edit Comment
+    </h2>
+    <form class="edit-comment-form">
+      <label for="comment">
+        Comment
+      </label>
+      <br />
+      <textarea id="body" name="body" rows="2" cols="30">{{comment.body}}</textarea>
+      <br />
+            {{!-- content --}}
+      {{!-- <label for="body">Content:
+      </label>
+      <br/>
+      <textarea id="body" name="body" rows="5" cols="30">
+      {{post.body}}
+    </textarea>
+    <br> --}}
+      {{!-- <label for="body">
+        Posted by: {{post.User.username}}
+      </label> --}}
+      {{!-- <br /> --}}
+     
+      <button type="submit" value="edit-submit">
+        Submit
+      </button>
+    </form>
+    </div>
+    </div>
+
+<script src="/js/post.js"></script>
+<script src="/js/edit-comment.js"></script>

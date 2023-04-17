@@ -2,6 +2,8 @@ const router = require('express').Router();
 const Comment = require('../../models/Comment');
 
 //post route to create a comment
+
+
 router.post('/', async (req, res) => {
     try {
       const commentData = await Comment.create({
@@ -36,23 +38,23 @@ router.post('/', async (req, res) => {
   });
 
             //COMMENT PUT ROUTE, MAYBE ADD THIS//
-  // router.put('/:id', async (req, res) => {
-  //   try {
-  //     const comment = await Comment.update(
-  //       {
-  //         body: req.body.body
-  //       },
-  //       {
-  //         where: {
-  //           id: req.params.id,
-  //         },
-  //       }
-  //     );
+  router.put('/:id', async (req, res) => {
+    try {
+      const comment = await Comment.update(
+        {
+          body: req.body.body
+        },
+        {
+          where: {
+            id: req.params.id,
+          },
+        }
+      );
      
-  //     res.status(200).json(comment);
-  //   } catch (err) {
-  //     res.status(500).json(err);
-  //   }
-  // });
+      res.status(200).json(comment);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
   module.exports = router;

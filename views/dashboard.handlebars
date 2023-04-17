@@ -1,64 +1,125 @@
 <div class="menu-container">
   <div class="card-header col-md-12 text-center">
-    <h2>
+    <h2 class="mb-5">
       Your Dashboard
     </h2>
 
-{{#each posts as |post|}}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-6">
+          {{!-- <div class=""> --}}
+         
+            <div class="col-md-10 col-lg-10">
+                 <h3 class="mb-3">
+              Create New Post
+            </h3>
+            <form>
+              <label class="mb-2" for="post">
+                Title:
+              </label>
+              <br />
+              <textarea
+                class="mb-3"
+                id="title"
+                name="title"
+                rows="2"
+                cols="30"
+              >{{title}}</textarea>
+              <br />
+              {{! content }}
+              <label class="mb-2" for="content">
+                Content:
+              </label>
+              <br />
+              <textarea
+                class="mb-3"
+                id="content"
+                name="content"
+                rows="5"
+                cols="30"
+              >{{content}}</textarea>
+            
+            </br>
 
-<div class="list-group">
-  <a href="/edit-post/{{post.id}}" class="list-group-item list-group-item-action active" aria-current="true">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{{post.title}}</h5>
-      <small>Posted by {{post.User.username}} on {{format_date post.createdAt}}</small>
-    </div>
-    <p class="mb-1">{{post.body}}</p>
-  </a>
-                
-   <div class="col-md-6 post-list">
-   <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
-   </div>
-  <br>
-</div>
-    
-{{/each}}
+              <button class="mb-5" type="submit" value="Submit">
+                Submit
+              </button>
+            </form>
+              </div>
+          {{!-- </div> --}}
+        </div>
 
+        {{! <div class="container"> }}
+        <div class="col-md-6 col-lg-6">
+          <h3 class="mb-3">
+            Your Posts
+          </h3>
 
-  {{!-- </div> --}}
+          {{#each posts as |post|}}
 
-            {{!--create post --}}
-  <div class="add-post-container">
-    <h2>
-      Create New Post
-    </h2>
-    <form class="new-post-form">
-      <label for="post">
-        Title
-      </label>
-      <br />
-      <textarea id="title" name="title" rows="2" cols="30">{{title}}</textarea>
-      <br />
-            {{!-- content --}}
-      <label for="content">
-        Content:
-      </label>
-      <br />
-      <textarea id="content" name="content" rows="5" cols="30">
-      {{content}}
-    </textarea>
-      <br />
-     
-      <button type="submit" value="Submit">
-        Submit
-      </button>
-    </form>
+            <div class="list-group">
+              <a
+                href="/edit-post/{{post.id}}"
+                class="list-group-item list-group-item-action active"
+                aria-current="true"
+              >
+                <div class="d-flex w-100 justify-content-between">
+
+                  <h5 class="mb-1">{{post.title}}</h5>
+                 
+                  <small>
+                    {{post.User.username}}
+                    on
+                    {{format_date post.createdAt}}</small>
+                 
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+               <div class="col-md-9 col-lg-9">
+                <p class="mt-3 mb-1 text-center">{{post.body}}</p>
+                </div>
+                </div>
+              </a>
+                </div>
+              <div class="container">
+               <div class="col-md-12 col-lg-12">
+              <div class="d-flex justify-content-center">
+               
+              <div class="col-md-6 col-lg-6 post-list">
+                <button
+                  class="btn btn-sm btn-danger mb-5 mt-3"
+                  data-id="{{post.id}}"
+                >DELETE</button>
+              </div>
+
+                  <div class="edit-btn col-lg-6 col-md-6">
+                <button
+                  class="btn btn-sm mb-5 btn-primary mt-3"
+                  data-id="{{post.id}}"
+                >EDIT</button>
+              </div>
+            
+              </div>
+            </div>
+            </div>
+          
+
+{{!-- container div --}}
+
+        
+
+            {{! </div> }}
+
+          {{/each}}
+              </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-          {{!-- ADD COMMENTS --}}
 
-          {{!-- login --}}
+{{! ADD COMMENTS }}
 
+{{! login }}
 
-{{!-- <script src="/js/add-post.js"></script> --}}
+{{! <script src="/js/add-post.js"></script> }}
 <script src="/js/dashboard.js"></script>

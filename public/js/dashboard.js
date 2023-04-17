@@ -37,15 +37,22 @@ async function addPostForm(event) {
       }
     }
   };
+
+  const editButton = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+    document.location.href=`/edit-post/${id}`
+  }
+}
+
+  document.querySelectorAll('.edit-btn').forEach(editBtn=> {
+    editBtn.addEventListener('click', editButton)
+  })
+
   document
     .querySelector('.new-post-form')
     .addEventListener('submit', addPostForm);
 
-  //  var delBtnEls = document
-  // .querySelectorAll('.post-list')
-  // for (let i = 0; i < delBtnEls.length; i++) {
-  // delBtnEls[i].addEventListener('click', deleteButton);
-  // }
   document
   .querySelectorAll('.post-list').forEach(postlist=> {
     postlist.addEventListener('click', deleteButton);

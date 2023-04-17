@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/justincanavanmusic/tech-blog#readme",
   "dependencies": {
+    "@popperjs/core": "^2.9.2",
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.3",

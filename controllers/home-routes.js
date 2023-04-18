@@ -111,23 +111,31 @@ res.render('edit-comment', { comment })
 })
 
 router.get('/login', (req, res) => {
- 
+ const loggedIn=req.session.loggedIn;
+
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
-  res.render('login');
+  res.render('login', { loggedIn } );
 });
 
 //same as above but for the signup page
-router.get('/signup', (req, res) => {
- 
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
+// router.get('/signup', (req, res) => {
+//   const loggedIn=req.session.loggedIn;
+//   // console.log(req.session)
+
+//   // if (req.session.loggedIn) {
+//   //   res.redirect('/');
+//   //   return;
+//   // }
   
-  res.render('signup');
+//   res.render('signup', loggedIn );
+// });
+
+router.get('/signup', (req, res) => {
+  const loggedIn = req.session.loggedIn;
+  res.render('signup', loggedIn);
 });
 
 //get route for the dashboard page

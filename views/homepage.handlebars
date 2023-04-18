@@ -8,9 +8,9 @@
 <div class="list-group">
   <a href="/post/{{post.id}}" class="list-group-item d-flex list-group-item-action active" aria-current="true">
   <div class="col-sm-4 col-md-4 col-lg-4 d-flex">
-    {{!-- <div class="d-flex w-100 justify-content-between"> --}}
+   
       <h5 class="mb-1">{{post.title}}</h5>
-      {{!-- </div> --}}
+     
       </div>
       <div class="col-sm-4 col-md-5 col-lg-5">
       <p class="mb-1">{{post.body}}</p>
@@ -18,10 +18,9 @@
       <div class="col-sm-4 col-md-3 col-lg-3 d-flex flex-column align-items-end justify-content-between">
         
       <small class="text-end" >Posted by {{post.User.username}} at {{format_date post.createdAt}} </small>
-      {{!-- <div class="mt-auto"> --}}
+  
        <button class="btn btn-sm btn-danger" id="comment-page" data-id="{{post.id}}">View All Comments</button>
    
-       {{!-- </div> --}}
       </div>
    
   </a>
@@ -32,14 +31,10 @@
 </div>
 </div>
 
-
-
- 
-
 <script src="/js/add-post.js"></script>
 <script src="/js/homepage.js"></script>
 
-{{!-- <script src="/js/add-comment.js"></script> --}}
+
 
 
 

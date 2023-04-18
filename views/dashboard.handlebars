@@ -13,9 +13,11 @@
                  <h3 class="mb-3">
               Create New Post
             </h3>
-            <form>
-              <label class="mb-2" for="post">
-                Title:
+                
+            <div class="card">
+            <form class="new-post-form">
+              <label class="mt-3 mb-2" for="post">
+                Title
               </label>
               <br />
               <textarea
@@ -28,7 +30,7 @@
               <br />
               {{! content }}
               <label class="mb-2" for="content">
-                Content:
+                Content
               </label>
               <br />
               <textarea
@@ -41,23 +43,26 @@
             
             </br>
 
-              <button class="mb-5" type="submit" value="Submit">
+              <button class="btn btn-sm btn-primary" type="submit" value="Submit">
                 Submit
               </button>
             </form>
+            </div>
               </div>
           {{!-- </div> --}}
         </div>
 
         {{! <div class="container"> }}
-        <div class="col-md-6 col-lg-6">
+        <div class="mb-5 col-md-6 col-lg-6">
           <h3 class="mb-3">
             Your Posts
           </h3>
+        
+          <div class="card">
 
           {{#each posts as |post|}}
 
-            <div class="list-group">
+            <div class="list-group m-3">
               <a
                 href="/edit-post/{{post.id}}"
                 class="list-group-item list-group-item-action active"
@@ -75,7 +80,7 @@
                 </div>
                 <div class="col-12 d-flex justify-content-center">
                <div class="col-md-9 col-lg-9">
-                <p class="mt-3 mb-1 text-center">{{post.body}}</p>
+                <p class="mb-1 text-center">{{post.body}}</p>
                 </div>
                 </div>
               </a>
@@ -86,31 +91,38 @@
                
               <div class="col-md-6 col-lg-6 post-list">
                 <button
-                  class="btn btn-sm btn-danger mb-2 mt-3"
+                  class="btn btn-sm btn-danger mb-2 mt-2"
                   data-id="{{post.id}}"
-                >DELETE</button>
+                >Delete</button>
               </div>
 
                   <div class="edit-btn col-lg-6 col-md-6">
                 <button
-                  class="btn btn-sm mb-2 btn-primary mt-3"
+                  class="btn btn-sm mb-2 btn-primary mt-2"
                   data-id="{{post.id}}"
-                >EDIT</button>
+                >Edit</button>
               </div>
             
               </div>
             </div>
             </div>
+
+          
+  
             <hr>
+         
+      
           
 
 {{!-- container div --}}
 
         
 
-            {{! </div> }}
+         
 
           {{/each}}
+              </div>
+              </div>
               </div>
         </div>
       </div>

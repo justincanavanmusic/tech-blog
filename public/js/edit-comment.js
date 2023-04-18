@@ -17,9 +17,7 @@ async function editComment(event) {
       if (responseObject.ok) {
         const commentBtn = document.querySelector('#comment-btn')
         const postId = commentBtn.getAttribute('data-id');
-        console.log(postId);
         document.location.replace(`/post/${postId}`);
-        // document.location.replace(`/dashboard`);
       } else {
         alert('Failed to edit post');
       }

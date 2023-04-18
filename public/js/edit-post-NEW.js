@@ -5,9 +5,7 @@ async function editPostForm(event) {
     const title = document.querySelector('#title').value.trim();
     const body = document.querySelector('#body').value.trim();
 
-    const id = window.location.toString().split('/')[
-      window.location.toString().split('/').length - 1
-    ];
+ 
    //const id    takes the url, turns it to a string, splits it at each ('/') and forms a new array of strings, one at each split. 
   
   //below we fetch the data that was input from the fetch statements put route. it stringifys the data so it is able to be accessed on the edit-post-NEW handlebars page. this is all stored in the "responseObject" const

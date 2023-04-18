@@ -32,28 +32,7 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-router.get('/comments', async (req, res) => {  
-  try {
-    const commentData = await Comment.findAll({
-      // include: [
-      //   User,
-      //   { 
-      //     model: Comment, 
-      //     include: [User]
-      //   }
-      // ]
-    });
 
-    
-    const comments = commentData.map((singleComment) => singleComment.get({ plain: true }));
-  
-    // const loggedIn = req.session.loggedIn; 
-  
-    res.render('edit-comment', { comments }); 
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 
 //this get route finds one Post object from the database using the find by primary key method. whatever is entered as the :id parameter will be used to grab the corresponding object in the database. ie if the endpoint is /post/2 , the findByPk method will grab the object that has "2" as its' id (which is the primary key by default)
@@ -113,9 +92,11 @@ router.get('/edit-post/:id', withAuth, async (req, res) => {
 
 router.get('/edit-comment/:id', async (req, res) => {
   try {
-    const oneComment = await Comment.findByPk(req.params.id)
+    const oneComment = await Comment.findByPk(req.params.id, {
+      
+    })
 
-
+    
 if(!oneComment) {
   res.status(404).json({message: 'No comment with this id!'})
 }

@@ -40,6 +40,7 @@ router.post('/', async (req, res) => {
             //COMMENT PUT ROUTE, MAYBE ADD THIS//
   router.put('/:id', async (req, res) => {
     try {
+      console.log(req.params.id);
       const comment = await Comment.update(
         {
           body: req.body.body
@@ -52,6 +53,7 @@ router.post('/', async (req, res) => {
       );
      
       res.status(200).json(comment);
+      console.log(comment);
     } catch (err) {
       res.status(500).json(err);
     }

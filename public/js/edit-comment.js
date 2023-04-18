@@ -1,11 +1,9 @@
 async function editComment(event) {
     event.preventDefault();
 
-    const body = document.querySelector('#body').value.trim()
-    console.log(body)
-    const id = window.location.toString().split('/')
-    [
-        window.location.toString().split('/').length - 1
+    const body = document.querySelector('#body').value;
+    const id = window.location.toString().split('/')[
+      window.location.toString().split('/').length - 1
     ];
     const responseObject = await fetch(`/api/comment/${id}`, {
         method: 'PUT',
@@ -17,7 +15,11 @@ async function editComment(event) {
         },
       });
       if (responseObject.ok) {
-        document.location.replace(`/dashboard`);
+        const commentBtn = document.querySelector('comment-btn')
+        const postId = commentBtn.getAttribute('data-id');
+        console.log(postId);
+        document.location.replace(`api/post/${postId}`);
+        // document.location.replace(`/dashboard`);
       } else {
         alert('Failed to edit post');
       }

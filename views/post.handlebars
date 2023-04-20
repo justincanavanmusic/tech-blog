@@ -1,7 +1,5 @@
           {{!-- EDIT POST --}}
 
-          <p>{{userId}}</p>
-       
 <div class="menu-container">
   <div class="card-header col-12">
     <br>
@@ -29,12 +27,8 @@
     <p>{{format_date post.createdAt}} </p>
     </div>
     </div>
-
-
-
     </div>
-     
-
+    
   <div class="card-header col-md-6 col-lg-6 text-center">
       <form class="new-comment-form">
       <h5 class='mb-3 mt-3' for="comment">
@@ -52,49 +46,58 @@
     </div>
   </div>
 
-  <p> {{userId}} </p>
+
 
   {{#if post.Comments}}
-  {{!-- <div class="d-flex justify-content-center"> --}}
+ 
 
 <h3 class="text-center mt-5">Comments</h3>
 {{else}}
 {{/if}}
+{{!-- {{#with userId as |currentUserId|}} --}}
+
  {{#each post.Comments as | comment | }}
+
  <div class="mx-auto col-md-8 col-lg-8"> 
 <div>
  <ul class="list-group">
   <li class="list-group-item">{{comment.body}}</li>
-  <p>{{comment.User.id}}</p>
+  {{!-- <p>{{comment.User.id}}</p> --}}
   <li class="list-group-item">Posted by: {{ User.username }}</li>  
 </ul>
+
  </div>
+{{#if (comparison ../userId comment.User.id)}}
+ <div class="col-md-6 comment-list">
+  <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
+</div>
+
+<div class="col-md-6 comment-btn">
+  <button class="btn btn-sm btn-primary" data-id="{{comment.id}}">EDIT</button>
+  {{else}}
+  {{/if}}
 {{!-- 
  <p>{{loggedIn}}</p> --}}
 {{!-- 
-{{#if comment.User.id===userId }}
+{{#comparison comment.User.id===userId }}
 <p>hello</p>
 {{else}}
 <p>bye</p>
 {{/if}} --}}
 
 
-{{#if comment.User.id}}
-{{#if userId}}
-<p>hello</p>
-{{else}}
-<p>goodbye</p>
-{{/if}}
-{{/if}}
-
 </div>
 
 </div>
 
 </div>
 </div>
+{{!-- <p>{{../userId}}</p> --}}
 
 {{/each}}
+
+
+
 </div>
 
 

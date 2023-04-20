@@ -23,8 +23,10 @@ router.get('/', withAuth, async (req, res) => {
     //the response renders the 'homepage.handlebars' page; we are storing the newPosts arr into a variable called "posts". we will use that variable to access the data in the handlebars page as you can see on line 1 of homepage.handlebars 
     
     const posts = postData.map((singlePost) => singlePost.get({ plain: true }));
+    console.log(posts);
   
     const loggedIn = req.session.loggedIn; 
+    console.log('hello');
   
     res.render('homepage', { posts, loggedIn }); 
   } catch (err) {
@@ -47,16 +49,20 @@ router.get('/post/:id', withAuth, async (req, res) => {
         }
         ]
        })  //displays a .json message if the post :id doesn't exist
+       console.log(req.session.user_id);
       if(!postData) {
           res.status(404).json({message: 'No post with this id!'});
           return;
       }
       //storing the readable data into the post const
       const post = postData.get({ plain: true });
-      // console.log(post)
+      // console.log(post);
       const loggedIn = req.session.loggedIn; 
+      const userId = req.session.user_id;
+      console.log(userId)
+     
       //renders the 'post' handlebars page. we then take the post object in the render statement which allows us to access the post object in the post.handlebars page. 
-      res.render('post', { post, loggedIn }); 
+      res.render('post', { post, loggedIn, userId }); 
     } catch (err) {
       console.log(err)
         res.status(500).json(err);

@@ -3,6 +3,8 @@ async function addPostForm(event) {
   
     const title = document.querySelector('#title').value;
     const body = document.querySelector('#content').value;
+
+    console.log('hello')
   
     const response = await fetch(`/api/post`, {
       method: 'POST',

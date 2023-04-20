@@ -1,11 +1,14 @@
           {{!-- EDIT POST --}}
+
+          <p>{{userId}}</p>
+       
 <div class="menu-container">
-  <div class="card-header col-md-12">
+  <div class="card-header col-12">
     <br>
 
   <div class="edit-post-container">
     <div class="row">
-    <div class="card pt-3 col-md-6 col-lg-6 text-center">
+    <div class="card pt-3 mx-auto col-sm-6 col-md-6 col-lg-6 text-center">
             <h5>Post</h5> 
            
     <p>{{post.body}}</p> 
@@ -22,7 +25,7 @@
     </div>
 
       <div class="d-block col-md-4 col-lg-4">
-    <h5>Date Posted:</h5> 
+    <h5>Date Posted</h5> 
     <p>{{format_date post.createdAt}} </p>
     </div>
     </div>
@@ -49,36 +52,52 @@
     </div>
   </div>
 
+  <p> {{userId}} </p>
+
   {{#if post.Comments}}
-  <div class="d-flex justify-content-center">
-<div class="col-md-8 col-lg-8"> 
+  {{!-- <div class="d-flex justify-content-center"> --}}
+
 <h3 class="text-center mt-5">Comments</h3>
 {{else}}
 {{/if}}
  {{#each post.Comments as | comment | }}
+ <div class="mx-auto col-md-8 col-lg-8"> 
 <div>
  <ul class="list-group">
   <li class="list-group-item">{{comment.body}}</li>
+  <p>{{comment.User.id}}</p>
   <li class="list-group-item">Posted by: {{ User.username }}</li>  
 </ul>
  </div>
+{{!-- 
+ <p>{{loggedIn}}</p> --}}
+{{!-- 
+{{#if comment.User.id===userId }}
+<p>hello</p>
+{{else}}
+<p>bye</p>
+{{/if}} --}}
 
-<div class="col-md-6 comment-list">
-  <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
+
+{{#if comment.User.id}}
+{{#if userId}}
+<p>hello</p>
+{{else}}
+<p>goodbye</p>
+{{/if}}
+{{/if}}
+
 </div>
 
-<div class="col-md-6 comment-btn">
-  <button class="btn btn-sm btn-primary" data-id="{{comment.id}}">EDIT</button>
 </div>
 
 </div>
 </div>
-
 
 {{/each}}
 </div>
-</div>
 
 
+{{!-- <script src="/js/eq.js"></script> --}}
 <script src="/js/post.js"></script>
 <script src="/js/add-comment.js"></script>

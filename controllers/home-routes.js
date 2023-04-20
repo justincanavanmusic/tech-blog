@@ -26,7 +26,7 @@ router.get('/', withAuth, async (req, res) => {
     console.log(posts);
   
     const loggedIn = req.session.loggedIn; 
-    console.log('hello');
+  
   
     res.render('homepage', { posts, loggedIn }); 
   } catch (err) {
@@ -56,10 +56,10 @@ router.get('/post/:id', withAuth, async (req, res) => {
       }
       //storing the readable data into the post const
       const post = postData.get({ plain: true });
-      // console.log(post);
+      console.log(post);
       const loggedIn = req.session.loggedIn; 
       const userId = req.session.user_id;
-      console.log(userId)
+      // console.log(userId)
      
       //renders the 'post' handlebars page. we then take the post object in the render statement which allows us to access the post object in the post.handlebars page. 
       res.render('post', { post, loggedIn, userId }); 

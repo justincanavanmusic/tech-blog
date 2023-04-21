@@ -141,7 +141,7 @@ router.get('/login', (req, res) => {
 
 router.get('/signup', (req, res) => {
   const loggedIn = req.session.loggedIn;
-  res.render('signup', loggedIn);
+  res.render('signup', { loggedIn });
 });
 
 //get route for the dashboard page

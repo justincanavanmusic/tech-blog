@@ -1,6 +1,42 @@
-/* .modal-opacity {
-    opacity: .8;
-} */
+:root {
+    --darkBlue: #046786;
+    --green: #029299;
+    --cream: #fdfcdc;
+    --pink: #fed9b7;
+    --lightBlue: #B3DDF2;
+    --red: #F07167;
+    
+}
+
+.background-green {
+    background-color: var(--green);
+}
+.background-cream {
+    background-color: var(--cream);
+}
+.cream-font {
+    color: var(--cream);
+}
+
+.green-font {
+    color: var(--green);
+}
+
+.black-font {
+    color: black;
+}
+
+.dark-blue-font {
+    color: var(--darkBlue)
+}
+
+
+.background-red {
+    background-color: var(--red);
+}
+.background-pink {
+    background-color: var(--pink);
+}
 
 .form-width {
     width: 65%;
@@ -13,6 +49,35 @@
 .black-font {
     color: black;
 }
+
+.hr-comment {
+    border-top: 5px dotted;
+    border-color: var(--cream);
+    opacity: 1;
+}
+
+.hr-green {
+    border-top: 5px dotted;
+    border-color: var(--green);
+    opacity: 1;
+}
+
+.hr-green-solid {
+    border-top: 3px solid var(--green);
+    border-color: var(--green);
+    opacity: 1;
+}
+
+.hr-post {
+    border-top: 3px solid var(--cream);
+    /* border-color: white !important;
+    background-color: cream; */
+    opacity: 1;
+    /* border-radius: 50%; */
+
+}
+
+
 
 /* .border-radius {
     border-radius: 10%;

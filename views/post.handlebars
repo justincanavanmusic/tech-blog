@@ -6,12 +6,12 @@
 
   <div class="edit-post-container">
     <div class="row">
-    <div class="card pt-3 mx-auto col-sm-6 col-md-6 col-lg-6 text-center">
+    <div class="card pt-3 mx-auto col-9 col-sm-9 col-md-5 col-lg-5 text-center">
             <h5>Post</h5> 
            
     <p>{{post.body}}</p> 
      <hr>
-    <div class="d-flex">
+    <div class="d-flex justify-content-between">
        <div class="d-block col-md-4 col-lg-4">
     <h5>Post Title</h5>
     <p>{{post.title}}</p>   
@@ -48,22 +48,22 @@
 
 
 
-  {{#if post.Comments}}
- 
+
+ {{!-- {{#if post.Comments}}
 
 <h3 class="text-center mt-5">Comments</h3>
 {{else}}
-{{/if}}
+{{/if}} --}}
 {{!-- {{#with userId as |currentUserId|}} --}}
 
- {{#each post.Comments as | comment | }}
+ {{!-- {{#each post.Comments as | comment | }}
 
  <div class="mx-auto col-md-8 col-lg-8"> 
 <div>
  <ul class="list-group">
-  <li class="list-group-item">{{comment.body}}</li>
+  <li class="list-group-item">{{comment.body}}</li> --}}
   {{!-- <p>{{comment.User.id}}</p> --}}
-  <li class="list-group-item">Posted by: {{ User.username }}</li>  
+  {{!-- <li class="list-group-item">Posted by: {{ User.username }}</li>  
 </ul>
 
  </div>
@@ -75,7 +75,7 @@
 <div class="col-md-6 comment-btn">
   <button class="btn btn-sm btn-primary" data-id="{{comment.id}}">EDIT</button>
   {{else}}
-  {{/if}}
+  {{/if}} --}}
 {{!-- 
  <p>{{loggedIn}}</p> --}}
 {{!-- 
@@ -94,7 +94,7 @@
 </div>
 {{!-- <p>{{../userId}}</p> --}}
 
-{{/each}}
+{{!-- {{/each}} --}}
 
 
 

@@ -19,7 +19,8 @@ async function addCommentForm(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/post/' + id);
+      // document.location.replace('/post/' + id);
+      document.location.replace('/')
     } else {
       alert('Failed to add comment');
     }

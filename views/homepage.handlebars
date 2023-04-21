@@ -2,9 +2,7 @@
   <div class="row d-flex">
 
 {{#each posts as |post|}}
-
-
-
+<div class="card">
 <div class="list-group">
   <a href="/post/{{post.id}}" class="list-group-item d-flex list-group-item-action active" aria-current="true">
   <div class="col-sm-4 col-md-4 col-lg-4 d-flex">
@@ -17,17 +15,43 @@
       </div>
       <div class="col-sm-4 col-md-3 col-lg-3 d-flex flex-column align-items-end justify-content-between">
         
-      <small class="text-end" >Posted by {{post.User.username}} at {{format_date post.createdAt}} </small>
+      <small class="text-end" >Posted by {{post.User.username}} on {{format_date post.createdAt}} </small>
+     
   
-       <button class="btn btn-sm btn-danger" id="comment-page" data-id="{{post.id}}">View All Comments</button>
+       <button class="btn btn-sm btn-danger" id="comment-page" data-id="{{post.id}}">Add Comment</button>
    
       </div>
    
   </a>
   <br>
+     <div class="container">
+      <div class="row">
+   {{#each post.Comments as |comments|}}
+  <div class="col-sm-10 col-10 col-md-6 col-lg-6">
+   <div class="card px-2 pt-2 mb-4">
+    {{!-- <div class="mx-auto col-10 col-sm-10 col-md-10 col-lg-10"> --}}
+   <div class="d-flex justify-content-between">
+    <div class="mb-2 p-2 col-sm-10 col-10 col-md-10 col-lg-10">
+    <div class="card p-2">
+      <p >{{comments.body}}</p>
+      </div>
+</div>
 
+      <p class="com-u-name">{{comments.User.username}}</p>
+      {{!-- </div> --}}
+      </div>
+  
+      </div>
+  </div>
+      {{/each}}
+      </div>
+      </div>
+      
 
+</div>
+</div>
 {{/each}}
+
 </div>
 </div>
 

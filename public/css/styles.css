@@ -74,8 +74,14 @@
     background-color: cream; */
     opacity: 1;
     /* border-radius: 50%; */
-
 }
+
+.hr-mini {
+    border-top: 1px solid var(--cream);
+    opacity: 1;
+}
+
+
 
 
 

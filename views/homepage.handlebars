@@ -3,26 +3,30 @@
 
 
     {{#each posts as |post|}}
-      <div class="col-11 mx-auto">
+      <div class="col-12 mx-auto">
         <div class="card background-cream px-3 mb-5">
-          <div class="row">
-            {{! <div class="col-12"> }}
+          
+         
+            <div class="card mx-auto m-3 col-11">
+            <div class="row background-green">
             <div class="col-6">
-              <div class="d-inline-block background-green cream-font card px-4 mt-3 mb-3 pt-2">
+              <div class="d-inline-block background-cream black-font card px-4 mt-3 mb-3 pt-2">
                 <h5 class="card-title align-self-start d-">{{post.title}}</h5>
               </div>
             </div>
             <div class="col-6">
               <div
-                class="card background-green cream-font float-end d-inline-block px-4 mt-3 mb-3 pt-2 pb-1 text-end ml-auto"
+                class="card background-cream black-font float-end d-inline-block px-4 mt-3 mb-3 pt-2 pb-1 text-end ml-auto"
               >
                 <small>{{post.User.username}}
                   <br />
+                  <hr class="my-1 hr-mini" >
                   {{format_date post.createdAt}}
                 </small>
               </div>
-              {{! </div> }}
+           
             </div>
+          </div>
           </div>
         <hr class="my-0">
 
@@ -33,7 +37,7 @@
               aria-current="true"
             >
               <div class="card background-cream col-8">
-                <p class="black-font card mx-4 col-10 px-3 green-font pt-3 mt-4 mb-4 pb-5">{{post.body}}</p>
+                <p class="black-font card mx-4 px-3 green-font pt-3 mt-4 mb-4 pb-5">{{post.body}}</p>
 
               </div>
 
@@ -49,9 +53,17 @@
 
               </div>
 
+              
+
             </a>
-           
+
+ <button
+                  class="btn btn-sm mx-1 view-com background-red view-comments cream-font"
+             
+                >View Comments</button>
+         
             {{#if post.Comments}}
+              <div id="comment-toggle" class="d-none">
                 <hr class="cream-font my-0 hr-comment ">
                 {{else}}
                 {{!-- <br> --}}
@@ -59,7 +71,7 @@
             <div class="container">
               <div class="row">
                 {{#each post.Comments as |comments|}}
-                  <div class="col-sm-10 col-10 col-md-4 col-lg-4">
+                  <div class="col-sm-10 col-10 col-md-6 col-lg-6">
                     
                     <div class="card black-font background-cream px-2 pt-2 mt-3 mb-4">
                            <p class="com-u-name">{{comments.User.username}}</p>
@@ -86,13 +98,16 @@
           </div>
         </div>
       </div>
+
       
       <hr class="mb-5 cream-font hr-post">
+      </div>
    
     {{/each}}
 
   </div>
 </div>
 
+<script src="/js/view-comments.js"></script>
 <script src="/js/add-post.js"></script>
 <script src="/js/homepage.js"></script>

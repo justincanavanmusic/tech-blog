@@ -1,23 +1,26 @@
 <div class="menu-container">
   <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
-    <h2 class="mb-4">
+    <div class="card mx-auto background-cream col-6">
+    <h2 class="black-font mt-2 mb-2">
       Your Dashboard
     </h2>
-<hr class="w-50 mx-auto mb-4">
+    </div>
+<hr class="w-75 hr-post mx-auto mb-4">
     <div class="container">
       <div class="row">
         <div class="card background-cream col-10 mx-auto pt-4 pb-4">
-        <div class="mx-auto col-9 col-sm-9 col-md-6 col-lg-6">
+        <div class="card background-green pt-3 mx-auto col-9">
+        <div class="mx-auto col-11">
           
-               <div class="mx-auto col-10 col-sm-10 col-md-10 col-lg-10">
+               <div class="mx-auto col-12">
 
          <div class="mx-auto col-8">
-   <h3 class="card background-green cream-font p-2 mb-3">
+   <h3 class="card background-cream black-font p-2 mb-3">
               Create Post
             </h3>
             </div>
 
-            <div class="card background-green cream-font mb-3">
+            <div class="card background-cream black-font mb-3">
               {{!-- <div class="mx-auto col-10 col-sm-10 col-md-10 col-lg-10"> --}}
             <form class="mb-3 new-post-form">
               <label class="mt-3 mb-2" for="post">
@@ -56,14 +59,17 @@
               </div>
           {{!-- </div> --}}
         </div>
+        </div>
           <hr class="hr-green-solid">
 
         {{! <div class="container"> }}
         <div class="mb-5 mx-auto col-9 col-sm-9 col-md-9 col-lg-9">
-             <div class="mx-auto col-6">
-          <h3 class="card mb-3 background-green cream-font p-2">
+          <div class="card mx-auto background-green col-6 pt-2 mb-2">
+             <div class="mx-auto col-11">
+          <h3 class="background-cream black-font p-2">
             Your Posts
           </h3>
+          </div>
           </div>
           
         
@@ -71,7 +77,7 @@
    <div class="row">
           {{#each posts as |post|}}
         
-   <div class="card background-green mx-auto col-11 pb-2 mb-5">
+   <div class="background-green mx-auto col-11 pb-2 mb-3">
             <div class="list-group mt-3 mb-3">
               <a
                 href="/edit-post/{{post.id}}"
@@ -79,11 +85,11 @@
                 aria-current="true"
               >
                 <div class="d-flex w-100 justify-content-between">
-                  <div class="col-6">
+                  <div class="col-6 d-inline-block">
                   <p class="text-start align-self-start title-margin p-2 card black-font">{{post.title}}</p>
                   </div>
                
-                  <small class="text-end align-self-start p-2 black-font">
+                  <small class="card text-end align-self-start p-2 black-font">
                     {{post.User.username}}
                     <br>
                     {{format_date post.createdAt}}</small>
@@ -125,7 +131,7 @@
   </div>
           </div>
    
-
+<hr>
           {{/each}}
           </div>
               </div>

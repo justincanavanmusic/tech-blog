@@ -1,34 +1,26 @@
 async function viewComments(event) {
 
+let btnId = event.target.getAttribute('data-id')
+console.log(btnId)
 
-   let commentDiv = document.querySelector('#comment-toggle');
+// console.log(event.target)
+   let commentDiv = document.querySelector(`.data-${btnId}`);
 
-   let postId=commentDiv.getAttribute('data-id')
-   console.log(postId);
 
-// let btn = document.querySelectorAll
-//    let btnId=c
-
+if(commentDiv.style.display==='none') {
+    commentDiv.style.display='block';
+} else {
+    commentDiv.style.display='none';
+}
  
-//    if(commentDiv.classList.contains('d-none')) {
-//     commentDiv.setAttribute('class', 'd-block')
-//    } else if (commentDiv.classList.contains('d-block')) {
-//     commentDiv.setAttribute('class', 'd-none')
-//    }
-   
-commentDiv.classList.toggle('d-block');
-commentDiv.classList.toggle('d-none');
 
-// if(commentDiv.style.display==='d-none') {
-//     commentDiv.style.display==='d-block';
-// } else {
-//     commentDiv.style.display==='d-none';
-// }
- 
+   let commentId = commentDiv.getAttribute('data-id')
+console.log(commentId)
+
+
+
 }
 
 const viewCommentBtn = document.querySelectorAll('.view-comments').forEach(btn=> {
     btn.addEventListener('click', viewComments)
 })
-
-// document.getElementById('view-comments').addEventListener('click', viewComments)

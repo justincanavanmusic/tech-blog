@@ -59,11 +59,13 @@
 
  <button
                   class="btn btn-sm mx-1 view-com background-red view-comments cream-font"
+                    data-id="{{post.id}}"
              
                 >View Comments</button>
          
             {{#if post.Comments}}
-              <div id="comment-toggle" class="d-none">
+              <div class="data-{{post.id}}"
+              style='display: none'>
                 <hr class="cream-font my-0 hr-comment ">
                 {{else}}
                 {{!-- <br> --}}
@@ -71,7 +73,7 @@
             <div class="container">
               <div class="row">
                 {{#each post.Comments as |comments|}}
-                  <div class="col-sm-10 col-10 col-md-6 col-lg-6">
+                  <div data-id="{{post.id}}" class="col-sm-10 col-10 col-md-6 col-lg-6">
                     
                     <div class="card black-font background-cream px-2 pt-2 mt-3 mb-4">
                            <p class="com-u-name">{{comments.User.username}}</p>

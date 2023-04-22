@@ -29,40 +29,43 @@
           </div>
           </div>
         <hr class="my-0">
-
-          <div class="card background-green mt-4 px-3 mb-4">
+    
+          <div class="row">
+            <div class="col-12">
+          <div class="card d-flex background-green mt-4 px-3 mb-4">
             <a
+
               href="/post/{{post.id}}"
               class="list-group-item d-flex list-group-item-action mb-4 mt-4 active"
               aria-current="true"
-            >
+            ></a>
               <div class="card background-cream col-8">
                 <p class="black-font card mx-4 px-3 green-font pt-3 mt-4 mb-4 pb-5">{{post.body}}</p>
 
               </div>
 
               <div
-                class="col-4 float-end d-flex justify-content-end flex-column align-items-end"
-              >
+                class="col-4 mt-2"
+
+              >       
 
                 <button
-                  class="btn btn-sm mx-1 background-red cream-font"
+                  class="btn btn-sm mx-1 mt-2 mb-3 background-red cream-font"
                   id="comment-page"
                   data-id="{{post.id}}"
                 >Add Comment</button>
 
-              </div>
-
-              
-
-            </a>
-
- <button
-                  class="btn btn-sm mx-1 view-com background-red view-comments cream-font"
+                 <button
+                  class="btn btn-sm mx-1 mt-2 mb-3 view-com background-red view-comments cream-font"
                     data-id="{{post.id}}"
              
                 >View Comments</button>
-         
+
+          
+              </div>
+              </div>
+              </div>
+
             {{#if post.Comments}}
               <div class="data-{{post.id}}"
               style='display: none'>

@@ -6,57 +6,58 @@
       <div class="col-12 mx-auto">
         <div class="card background-cream px-3 mb-5">
           
+         <div class="col-12 mx-auto">
+            <div class="card background-green mt-3 mx-3 px-3 mb-3">
          
-            <div class="card mx-auto m-3 col-11">
-            <div class="row background-green">
-            <div class="col-6">
+            <div class="col-12">
               <div class="d-inline-block background-cream black-font card px-4 mt-3 mb-3 pt-2">
                 <h5 class="card-title align-self-start d-">{{post.title}}</h5>
               </div>
             </div>
-            <div class="col-6">
-              <div
-                class="card background-cream black-font float-end d-inline-block px-4 mt-3 mb-3 pt-2 pb-1 text-end ml-auto"
-              >
-                <small>{{post.User.username}}
-                  <br />
-                  <hr class="my-1 hr-mini" >
-                  {{format_date post.createdAt}}
-                </small>
-              </div>
-           
-            </div>
-          </div>
+  </div>
+
           </div>
         <hr class="my-0">
-    
+
           <div class="row">
             <div class="col-12">
-          <div class="card d-flex background-green mt-4 px-3 mb-4">
-            <a
+        
+          <div class="card background-green mt-4 mx-3 px-3 mb-2">
+            <div class="col-12 d-flex flex-wrap">
+         <div class="col-lg-8 col-md-8 col-sm-12 col-12 mx-auto">
+              <div class="card px-4 mt-3 mb-3 pt-2 pb-1 background-cream">
+              
+                <p class="black-font card mx-1 px-3 green-font pt-2 mt-3 mb-3 pb-5">{{post.body}}</p>
+                </div>
+                </div>
 
-              href="/post/{{post.id}}"
-              class="list-group-item d-flex list-group-item-action mb-4 mt-4 active"
-              aria-current="true"
-            ></a>
-              <div class="card background-cream col-8">
-                <p class="black-font card mx-4 px-3 green-font pt-3 mt-4 mb-4 pb-5">{{post.body}}</p>
-
+              <div class="col-lg-4 col-md-4 col-sm-12 col-12">    
+              <div
+                class="card float-end background-cream black-font px-3 mt-3 mb-3 pt-2 pb-1 text-end"
+              >
+                <p class="mb-0">{{post.User.username}}</p>
+                
+                  <hr class="hr-mini my-2">
+                  <p>
+                  {{format_date post.createdAt}}
+                </p>
               </div>
+           </div>
+           </div> 
+           </div>
+           </div>
 
               <div
-                class="col-4 mt-2"
-
+                class="col-12"
               >       
-
                 <button
-                  class="btn btn-sm mx-1 mt-2 mb-3 background-red cream-font"
+                  class="btn btn-sm mx-1 mt-3 mb-3 background-red cream-font"
                   id="comment-page"
                   data-id="{{post.id}}"
                 >Add Comment</button>
 
                  <button
-                  class="btn btn-sm mx-1 mt-2 mb-3 view-com background-red view-comments cream-font"
+                  class="btn btn-sm mx-1 mt-3 mb-3 view-com background-red view-comments cream-font"
                     data-id="{{post.id}}"
              
                 >View Comments</button>
@@ -65,20 +66,22 @@
               </div>
               </div>
               </div>
+              
 
             {{#if post.Comments}}
               <div class="data-{{post.id}}"
               style='display: none'>
-                <hr class="cream-font my-0 hr-comment ">
+                <hr class="hr-comment mb-4 my-0 ">
                 {{else}}
                 {{!-- <br> --}}
                 {{/if}}
             <div class="container">
               <div class="row">
+              
                 {{#each post.Comments as |comments|}}
                   <div data-id="{{post.id}}" class="col-sm-10 col-10 col-md-6 col-lg-6">
                     
-                    <div class="card black-font background-cream px-2 pt-2 mt-3 mb-4">
+                    <div class="card black-font background-cream px-2 pt-2 mt-3 mb-5">
                            <p class="com-u-name">{{comments.User.username}}</p>
                       {{! <div class="mx-auto col-10 col-sm-10 col-md-10 col-lg-10"> }}
                       <div class="d-flex justify-content-between">
@@ -101,7 +104,7 @@
             </div>
 
           </div>
-        </div>
+    
       </div>
 
       

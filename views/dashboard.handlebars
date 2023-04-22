@@ -50,7 +50,7 @@
             
             </br>
 
-              <button class="btn btn-sm btn-primary" type="submit" value="Submit">
+              <button class="btn btn-sm background-red cream-font" type="submit" value="Submit">
                 Submit
               </button>
             </form>
@@ -80,19 +80,19 @@
    <div class="background-green mx-auto col-11 pb-2 mb-3">
             <div class="list-group mt-3 mb-3">
               <a
-                href="/edit-post/{{post.id}}"
+                
                 class="background-cream list-group-item"
                 aria-current="true"
               >
-                <div class="d-flex w-100 justify-content-between">
+                <div class="d-flex justify-content-between">
                   <div class="col-6 d-inline-block">
                   <p class="text-start align-self-start title-margin p-2 card black-font">{{post.title}}</p>
                   </div>
                
-                  <small class="card text-end align-self-start p-2 black-font">
+                  <p class="card text-end align-self-start p-2 black-font">
                     {{post.User.username}}
                     <br>
-                    {{format_date post.createdAt}}</small>
+                    {{format_date post.createdAt}}</p>
                     </div>
 
                     <hr class="hr-green">
@@ -111,14 +111,14 @@
                
               <div class="col-md-6 col-lg-6 post-list">
                 <button
-                  class="btn btn-sm btn-danger mb-2 mt-2"
+                  class="btn btn-sm background-red white-font mb-2 mt-2"
                   data-id="{{post.id}}"
                 >Delete</button>
               </div>
 
                   <div class="edit-btn col-lg-6 col-md-6">
                 <button
-                  class="btn btn-sm mb-2 btn-primary mt-2"
+                  class="btn btn-sm mb-2 background-red white-font mt-2"
                   data-id="{{post.id}}"
                 >Edit</button>
               </div>

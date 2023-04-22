@@ -4,9 +4,12 @@
     --cream: #fdfcdc;
     --pink: #fed9b7;
     --lightBlue: #B3DDF2;
-    --red: #F07167;
+    --red: #e85f55;  
+
+    /* red was F07167 */
     
 }
+
 
 .background-green {
     background-color: var(--green);
@@ -20,6 +23,9 @@
 
 .green-font {
     color: var(--green);
+}
+.white-font {
+    color: white;
 }
 
 .black-font {

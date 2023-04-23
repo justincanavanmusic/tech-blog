@@ -62,5 +62,4 @@ async function addPostForm(event) {
   })
 
 
-  // .addEventListener('click', deleteButton);
  

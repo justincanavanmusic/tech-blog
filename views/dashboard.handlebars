@@ -1,11 +1,11 @@
 <div class="menu-container mb-5">
   <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
-    <div class="card mx-auto background-cream col-6">
+    <div class="card black-border mx-auto background-cream mb-4 col-6">
     <h2 class="black-font mt-2 mb-2">
       Your Dashboard
     </h2>
     </div>
-<hr class="w-75 hr-post mx-auto mb-4">
+{{!-- <hr class="w-75 hr-post mx-auto mb-4"> --}}
     <div class="container">
       <div class="row">
         <div class="card background-cream col-11 mx-auto pt-4 pb-4">
@@ -61,16 +61,16 @@
         </div>
          </div>
          <div class="col-3 mx-auto">
-          <button id='post-btn' class="btn btn-sm background-red cream-font" type="click" value="click">
+          <button id='post-btn' class="btn mb-3 btn-sm background-red cream-font" type="click" value="click">
                 View Posts
               </button>
 </div>
           <div id="view-posts" style="display: none">
-          <hr class="hr-green-solid">
+          <hr class="opacity-75 mx-auto post-border-2">
 
 
         <div class="mb-5 mx-auto col-9 col-sm-9 col-md-9 col-lg-9">
-          <div class="card mx-auto background-green col-6 pt-2 mb-2">
+          <div class="card mx-auto mt-4 background-green col-6 pt-2 mb-2">
              <div class="mx-auto col-11">
           <h3 class="background-cream black-font p-2">
             Your Posts
@@ -103,10 +103,11 @@
                 </div>
                 </div>
                 <div class="col-6 col-sm-6 col-md-4 col-lg-4">
-                  <div class="card float-end background-cream text-end post-border px-3 mb-3 mx-2 pt-2 pb-1 ">
-                   <p class="mx-auto mb-0 black-font">
+                  <div class="card float-end background-cream text-end post-border px-2 mb-3 mx-2 pt-1 pb-1 ">
+                   <p class="mx-auto mb-0 black-font"></p>
                     {{post.User.username}}
-                      <hr class="hr-mini my-2">
+                      <hr class="hr-mini mx-auto my-2">
+                      <p class="mb-1">
                     {{format_date post.createdAt}}</p>
                     </div>
                     </div>
@@ -139,7 +140,7 @@
            
   
   </div>
-            <hr class="border-3 dotted opacity-100 mt-5">
+            <hr class="border-3 opacity-100 mt-5">
    
 
           {{/each}}

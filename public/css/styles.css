@@ -5,6 +5,8 @@
     --pink: #fed9b7;
     --lightBlue: #B3DDF2;
     --red: #e85f55;  
+    --black: rgb(64, 58, 58);
+
 
     /* red was F07167 */
     
@@ -65,13 +67,16 @@
 .post-border {
     border: 3px solid var(--green) !important;
 }
+.post-border-2{
+    border: 1px solid var(--black) !important;
+}
 
 .hr-width {
     width: 95%;
 }
 
 .black-border {
-     border: 3px solid rgb(91, 82, 82) !important;
+     border: 3px solid rgb(64, 58, 58) !important;
 }
 
 .hr-green {
@@ -96,9 +101,9 @@
 
 .hr-mini {
     border-top: 1px solid black;
-    opacity: 1;
+    width: 95%; 
+    opacity: 80%;
 }
-
 
 
 

@@ -1,4 +1,4 @@
-<div class="menu-container">
+<div class="menu-container mb-5">
   <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
     <div class="card mx-auto background-cream col-6">
     <h2 class="black-font mt-2 mb-2">
@@ -8,8 +8,8 @@
 <hr class="w-75 hr-post mx-auto mb-4">
     <div class="container">
       <div class="row">
-        <div class="card background-cream col-10 mx-auto pt-4 pb-4">
-        <div class="card background-green pt-3 mx-auto col-9">
+        <div class="card background-cream col-11 mx-auto pt-4 pb-4">
+        <div class="card background-green pt-3 mb-3 mx-auto col-9">
         <div class="mx-auto col-11">
           
                <div class="mx-auto col-12">
@@ -21,7 +21,6 @@
             </div>
 
             <div class="card background-cream black-font mb-3">
-              {{!-- <div class="mx-auto col-10 col-sm-10 col-md-10 col-lg-10"> --}}
             <form class="mb-3 new-post-form">
               <label class="mt-3 mb-2" for="post">
                 Title
@@ -49,20 +48,27 @@
               >{{content}}</textarea>
             
             </br>
-
-              <button class="btn btn-sm background-red cream-font" type="submit" value="Submit">
+                  <button class="btn btn-sm background-red cream-font" type="submit" value="Submit">
                 Submit
               </button>
+             
             </form>
-            {{!-- </div> --}}
+       
             </div>
-              </div>
-          {{!-- </div> --}}
+          
         </div>
+        
         </div>
+         </div>
+         <div class="col-3 mx-auto">
+          <button id='post-btn' class="btn btn-sm background-red cream-font" type="click" value="click">
+                View Posts
+              </button>
+</div>
+          <div id="view-posts" style="display: none">
           <hr class="hr-green-solid">
 
-        {{! <div class="container"> }}
+
         <div class="mb-5 mx-auto col-9 col-sm-9 col-md-9 col-lg-9">
           <div class="card mx-auto background-green col-6 pt-2 mb-2">
              <div class="mx-auto col-11">
@@ -77,61 +83,65 @@
    <div class="row">
           {{#each posts as |post|}}
         
-   <div class="background-green mx-auto col-11 pb-2 mb-3">
-            <div class="list-group mt-3 mb-3">
-              <a
-                
-                class="background-cream list-group-item"
-                aria-current="true"
-              >
+          <div class="card mt-3 pt-3 background-green">
+   <div class="background-cream card mx-auto col-12 pb-2 mb-3">
+            
                 <div class="d-flex justify-content-between">
-                  <div class="col-6 d-inline-block">
-                  <p class="text-start align-self-start title-margin p-2 card black-font">{{post.title}}</p>
+                  <div class="col-12 px-3 d-inline-block">
+                    <div class="card mt-3 background-cream post-border">
+                  <h5 class="text-start m-2 px-2 title-margin black-font">{{post.title}}</h5>
+                  </div>
                   </div>
                
-                  <p class="card text-end align-self-start p-2 black-font">
-                    {{post.User.username}}
-                    <br>
-                    {{format_date post.createdAt}}</p>
                     </div>
 
-                    <hr class="hr-green">
-                    
-            
-                <div class="col-12 d-flex justify-content-center">
-               <div class="col-8">
-                <p class="mt-3 mb-1 text-start card black-font p-2">{{post.body}}</p>
+                    <hr class="mx-auto hr-width hr-green">
+                <div class="col-12 d-flex justify-content-center flex-wrap">
+               <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                <div class="card black-border mx-3 mx-2 mb-3 pb-3">
+                <p class="text-start black-font px-3 p-2">{{post.body}}</p>
                 </div>
                 </div>
-              </a>
+                <div class="col-6 col-sm-6 col-md-4 col-lg-4">
+                  <div class="card float-end background-cream text-end post-border px-3 mb-3 mx-2 pt-2 pb-1 ">
+                   <p class="mx-auto mb-0 black-font">
+                    {{post.User.username}}
+                      <hr class="hr-mini my-2">
+                    {{format_date post.createdAt}}</p>
+                    </div>
+                    </div>
                 </div>
-              <div class="container">
-               <div class="col-md-12 col-lg-12">
-              <div class="d-flex justify-content-center">
-               
-              <div class="col-md-6 col-lg-6 post-list">
-                <button
-                  class="btn btn-sm background-red white-font mb-2 mt-2"
-                  data-id="{{post.id}}"
-                >Delete</button>
-              </div>
+              
+                </div>
 
-                  <div class="edit-btn col-lg-6 col-md-6">
+               
+              <div class="col-12">
+                <div class="d-flex justify-content-end">
+                   <div class="edit-btn">
                 <button
-                  class="btn btn-sm mb-2 background-red white-font mt-2"
+                  class="btn btn-sm mb-2 me-2 background-red white-font"
                   data-id="{{post.id}}"
                 >Edit</button>
               </div>
-            
+               <div class="post-list">
+                <button
+                  class="btn btn-sm background-red white-font me-1 mb-2"
+                  data-id="{{post.id}}"
+                >Delete</button>
+                </div>
               </div>
-            </div>
-           
+              </div>
 
-{{!-- container div --}}        
+{{!--                
+            </div>
+              </div> --}}
+         
+           
+  
   </div>
-          </div>
+            <hr class="border-3 dotted opacity-100 mt-5">
    
-<hr>
+
           {{/each}}
           </div>
               </div>
@@ -142,10 +152,12 @@
     {{!-- </div> --}}
   </div>
 </div>
+</div>
 
 {{! ADD COMMENTS }}
 
 {{! login }}
 
 {{! <script src="/js/add-post.js"></script> }}
+<script src="/js/view-posts.js"></script>
 <script src="/js/dashboard.js"></script>

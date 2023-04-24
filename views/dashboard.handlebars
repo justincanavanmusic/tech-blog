@@ -1,7 +1,7 @@
 <div class="menu-container mb-5">
   <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
     <div class="card black-border mx-auto background-cream mb-4 col-6">
-    <h2 class="black-font mt-2 mb-2">
+    <h2 class="tech-font black-font mt-2 mb-2">
       Your Dashboard
     </h2>
     </div>
@@ -15,14 +15,14 @@
                <div class="mx-auto col-12">
 
          <div class="mx-auto col-8">
-   <h3 class="card background-cream black-font p-2 mb-3">
+   <h3 class="card tech-font background-cream black-font p-2 mb-3">
               Create Post
             </h3>
             </div>
 
             <div class="card background-cream black-font mb-3">
             <form class="mb-3 new-post-form">
-              <label class="mt-3 mb-2" for="post">
+              <label class="tech-font mt-3 mb-2" for="post">
                 Title
               </label>
               <br />
@@ -35,7 +35,7 @@
               >{{title}}</textarea>
               <br />
               {{! content }}
-              <label class="mb-2" for="content">
+              <label class="tech-font mb-2" for="content">
                 Content
               </label>
               <br />
@@ -48,7 +48,7 @@
               >{{content}}</textarea>
             
             </br>
-                  <button class="btn btn-sm background-red cream-font" type="submit" value="Submit">
+                  <button class="btn tech-font btn-sm background-red cream-font" type="submit" value="Submit">
                 Submit
               </button>
              
@@ -60,10 +60,12 @@
         
         </div>
          </div>
+         {{#if posts}}
          <div class="col-3 mx-auto">
-          <button id='post-btn' class="btn mb-3 btn-sm background-red cream-font" type="click" value="click">
+          <button id='post-btn' class=" tech-font btn mb-3 btn-sm background-red cream-font" type="click" value="click">
                 View Posts
               </button>
+              {{/if}}
 </div>
           <div id="view-posts" style="display: none">
           <hr class="opacity-75 mx-auto post-border-2">
@@ -72,7 +74,7 @@
         <div class="mb-5 mx-auto col-9 col-sm-9 col-md-9 col-lg-9">
           <div class="card mx-auto mt-4 background-green col-6 pt-2 mb-2">
              <div class="mx-auto col-11">
-          <h3 class="background-cream black-font p-2">
+          <h3 class="tech-font background-cream black-font p-2">
             Your Posts
           </h3>
           </div>
@@ -89,7 +91,7 @@
                 <div class="d-flex justify-content-between">
                   <div class="col-12 px-3 d-inline-block">
                     <div class="card mt-3 background-cream post-border">
-                  <h5 class="text-start m-2 px-2 title-margin black-font">{{post.title}}</h5>
+                  <h5 class="tech-font text-start m-2 px-2 title-margin black-font">{{post.title}}</h5>
                   </div>
                   </div>
                
@@ -103,7 +105,7 @@
                 </div>
                 </div>
                 <div class="col-6 col-sm-6 col-md-4 col-lg-4">
-                  <div class="card float-end background-cream text-end post-border px-2 mb-3 mx-2 pt-1 pb-1 ">
+                  <div class="card tech-font float-end background-cream text-end post-border px-2 mb-3 mx-2 pt-1 pb-1 ">
                    <p class="mx-auto mb-0 black-font"></p>
                     {{post.User.username}}
                       <hr class="hr-mini mx-auto my-2">
@@ -118,7 +120,7 @@
                
               <div class="col-12">
                 <div class="d-flex justify-content-end">
-                   <div class="edit-btn">
+                   <div class="edit-btn tech-font">
                 <button
                   class="btn btn-sm mb-2 me-2 background-red white-font"
                   data-id="{{post.id}}"

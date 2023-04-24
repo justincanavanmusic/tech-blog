@@ -11,7 +11,7 @@
          
             <div class="col-12">
               <div class="black-border d-inline-block background-cream black-font card px-4 mt-3 mb-3 pt-2">
-                <h5 class="card-title align-self-start d-">{{post.title}}</h5>
+                <h5 class="tech-font card-title align-self-start d-">{{post.title}}</h5>
               </div>
             </div>
   </div>
@@ -33,7 +33,7 @@
 
               <div class="col-lg-4 col-md-4 col-sm-12 col-12">    
               <div
-                class="card float-end background-cream black-font px-3 mt-3 mb-3 pt-2 pb-1 text-end"
+                class="tech-font card float-end background-cream black-font px-3 mt-3 mb-3 pt-2 pb-1 text-end"
               >
                 <p class="mb-0">{{post.User.username}}</p>
                 
@@ -52,15 +52,15 @@
               >       
                 <button
                   class="btn btn-sm mx-1 mt-3 mb-3 background-red cream-font comment-page"
-                  {{!-- id="comment-page" --}}
                   data-id="{{post.id}}"
                 >Add Comment</button>
-
+          {{#if post.Comments}}
                  <button
                   class="btn btn-sm mx-1 mt-3 mb-3 view-com background-red view-comments cream-font"
                     data-id="{{post.id}}"
              
                 >View Comments</button>
+                {{/if}}
 
           
               </div>

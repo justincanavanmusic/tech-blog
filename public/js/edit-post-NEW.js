@@ -1,9 +1,18 @@
 async function editPostForm(event) {
-  console.log('hello')
+
     event.preventDefault();
   
     const title = document.querySelector('#title').value.trim();
     const body = document.querySelector('#body').value.trim();
+
+    // const id = window.location.toString().split('/')[
+    //   window.location.toString().split('/').length - 1
+    // ];
+
+    const element = document.getElementById('title');
+    
+    let id=element.getAttribute('data-id')
+    console.log(id);
 
  
    //const id    takes the url, turns it to a string, splits it at each ('/') and forms a new array of strings, one at each split. 

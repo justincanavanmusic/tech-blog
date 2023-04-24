@@ -4,30 +4,37 @@
 
             {{!--EDIT post --}}
   <div class="container">
-    <h2 class="mb-3">
+    <div class="col-4 mx-auto">
+    <h2 class="card black-border pt-2 pb-2 mb-3 background-cream tech-font">
       Edit Post
     </h2>
+    </div>
     <hr>
+    <div class="col-8 mx-auto">
+    <div class="card background-cream pt-3">
     <form class="edit-post-form">
-      <label class="mb-2" for="post">
+      <label class="tech-font mb-2" for="post">
         Title
       </label>
       <br />
-      <textarea class="mb-3" id="title" name="title" rows="2" cols="30">{{post.title}}</textarea>
+      <textarea class="mb-3 form-width" data-id="{{post.id}}" id="title" name="title" rows="2" >{{post.title}}</textarea>
       <br />
-            {{!-- content --}}
-      <label class="mb-2" for="body">Content
+      
+      <label class="mb-2 tech-font" for="body">Content
       </label>
       <br/>
-      <textarea id="body" name="body" rows="5" cols="30">{{post.body}}</textarea>
+      <textarea class="form-width" id="body" name="body" rows="5">{{post.body}}</textarea>
     <br>
    
       <br />
      
-      <button type="submit" value="edit-submit" class="btn btn-sm btn-primary">
+      <button type="submit" value="edit-submit" class="btn btn-sm background-red cream-font">
         Submit
       </button>
     </form>
+    </div>
+    </div>
+    </div>
     </div>
     </div>
 

@@ -12,6 +12,9 @@
     
 }
 
+.tech-font {
+    font-family: 'Play', sans-serif;
+}
 
 .background-green {
     background-color: var(--green);

@@ -51,8 +51,8 @@
                 class="col-12"
               >       
                 <button
-                  class="btn btn-sm mx-1 mt-3 mb-3 background-red cream-font"
-                  id="comment-page"
+                  class="btn btn-sm mx-1 mt-3 mb-3 background-red cream-font comment-page"
+                  {{!-- id="comment-page" --}}
                   data-id="{{post.id}}"
                 >Add Comment</button>
 
@@ -66,11 +66,11 @@
               </div>
               </div>
               </div>
-              
+                        <div class="data-{{post.id}}"
+              style='display: none'>
 
             {{#if post.Comments}}
-              <div class="data-{{post.id}}"
-              style='display: none'>
+    
                 <hr class="hr-comment mb-4 my-0 ">
                 {{else}}
                 {{!-- <br> --}}

@@ -14,8 +14,8 @@ if(commentDiv.style.display==='none') {
 }
  
 
-   let commentId = commentDiv.getAttribute('data-id')
-console.log(commentId)
+//    let commentId = commentDiv.getAttribute('data-id')
+// console.log(commentId)
 
 
 

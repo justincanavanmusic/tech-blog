@@ -1,12 +1,13 @@
 async function viewCommentPage(event) {
 
+let btnId = event.target.getAttribute('data-id')
+console.log(btnId);
 
+let commentBtn = document.querySelector(`.data-${btnId}`)
 
-const commentsBtn = document.getElementById('comment-page') 
-
-const id = commentsBtn.getAttribute('data-id')
-
-document.location.replace(`/post/${id}`)
+document.location.replace(`/post/${btnId}`)
 }
 
-document.getElementById('comment-page').addEventListener('click', viewCommentPage)
+document.querySelectorAll('.comment-page').forEach(btn=> {
+    btn.addEventListener('click', viewCommentPage)
+})

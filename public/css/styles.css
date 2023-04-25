@@ -2,7 +2,11 @@
     --darkBlue: #0d7a9b;
     --green: #029299;
     --darkGreen: #237479;
+    --medGreen: #7fecdc;
+    --lightGreen: #61e7d7;
+  
     --cream: #fdfcdc;
+    --darkCream: #e8e7c4;
     --pink: #fed9b7;
     --lightBlue: #B3DDF2;
     --red: #e85f55;  
@@ -11,8 +15,25 @@
     
 }
 
+.site-title {
+    background-image: linear-gradient(to right, var(--lightGreen), var(--darkCream), var(--pink));
+}
+
+.dark-cream-font {
+    color: var(--darkCream);
+}
+
+.cream-border {
+    border: 5px solid var(--cream);
+}
+
 .btn {
     font-family: 'Play', sans-serif;
+}
+
+.btn:hover {
+    background-color: var(--red);
+    opacity: 90%;
 }
 
 
@@ -120,6 +141,3 @@
 
 
 
-/* .border-radius {
-    border-radius: 10%;
-} */

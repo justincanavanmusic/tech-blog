@@ -12,7 +12,7 @@
 </head>
 
 <body class="background-green black-font">
-  <nav class="tech-font navbar navbar-expand-lg bg-light">
+  <nav class="tech-font background-cream navbar navbar-expand-lg">
   <div class="container-fluid">
    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/dashboard">Dashboard</a>
@@ -47,11 +47,13 @@
 </nav>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
-      <h1 class="tech-font cream-font">
+      <div class="col-4">
+      <h1 class="card d-inline-block site-title black-border  black-font mt-2 py-2 px-3 tech-font">
     The Tech Blog
       </h1>
+      </div>
     </header>
-      <main class="background-green pt-5 container container-fluid">
+      <main class="background-green pt-5">
      {{{ body }}}
       </main>
   </div>

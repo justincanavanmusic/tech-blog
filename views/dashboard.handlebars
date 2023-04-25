@@ -8,19 +8,19 @@
 {{!-- <hr class="w-75 hr-post mx-auto mb-4"> --}}
     <div class="container">
       <div class="row">
-        <div class="card background-cream col-11 mx-auto pt-4 pb-4">
-        <div class="card background-green pt-3 mb-3 mx-auto col-9">
+        <div class="card thin-black-border background-cream col-11 mx-auto pt-4 pb-4">
+        <div class="card thin-black-border background-green pt-3 mb-3 mx-auto col-9">
         <div class="mx-auto col-11">
           
                <div class="mx-auto col-12">
 
          <div class="mx-auto col-8">
-   <h3 class="card tech-font background-cream black-font p-2 mb-3">
+   <h3 class="card tech-font thin-black-border background-cream black-font p-2 mb-3">
               Create Post
             </h3>
             </div>
 
-            <div class="card background-cream black-font mb-3">
+            <div class="card thin-black-border background-cream black-font mb-3">
             <form class="mb-3 new-post-form">
               <label class="tech-font mt-3 mb-2" for="post">
                 Title
@@ -62,17 +62,17 @@
          </div>
          {{#if posts}}
          <div class="col-3 mx-auto">
-          <button id='post-btn' class=" tech-font btn mb-3 btn-sm background-red cream-font" type="click" value="click">
+          <button id='post-btn' class=" tech-font btn btn-sm background-red cream-font" type="click" value="click">
                 View Posts
               </button>
               {{/if}}
 </div>
           <div id="view-posts" style="display: none">
-          <hr class="opacity-75 mx-auto post-border-2">
+          <hr class="post-border-2 opacity-75 mx-auto">
 
 
         <div class="mb-5 mx-auto col-9 col-sm-9 col-md-9 col-lg-9">
-          <div class="card mx-auto mt-4 background-green col-6 pt-2 mb-2">
+          <div class="card mx-auto mt-4 thin-black-border background-green col-6 pt-2 mb-2">
              <div class="mx-auto col-11">
           <h3 class="tech-font background-cream black-font p-2">
             Your Posts
@@ -86,7 +86,7 @@
           {{#each posts as |post|}}
         
           <div class="card mt-3 pt-3 background-green">
-   <div class="background-cream card mx-auto col-12 pb-2 mb-3">
+   <div class="background-cream card thin-black-border  mx-auto col-12 pb-2 mb-3">
             
                 <div class="d-flex justify-content-between">
                   <div class="col-12 px-3 d-inline-block">
@@ -100,7 +100,7 @@
                     <hr class="mx-auto hr-width hr-green">
                 <div class="col-12 d-flex justify-content-center flex-wrap">
                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                <div class="card black-border mx-3 mx-2 mb-3 pb-3">
+                <div class="card thin-black-border mx-3 mx-2 mb-3 pb-3">
                 <p class="text-start black-font px-3 p-2">{{post.body}}</p>
                 </div>
                 </div>

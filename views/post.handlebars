@@ -12,7 +12,7 @@
          
             <div class="col-12">
               <div class="black-border d-inline-block background-cream black-font card px-4 mt-3 mb-3 pt-2">
-                <h5 class="tech-font card-title align-self-start d-">{{post.title}}</h5>
+                <h5 class="tech-font card-title align-self-start">{{post.title}}</h5>
               </div>
             </div>
   </div>
@@ -25,16 +25,16 @@
         
           <div class="card background-green mt-4 mx-3 px-3 mb-4">
             <div class="col-12 d-flex flex-wrap">
-         <div class="col-lg-8 col-md-8 col-sm-12 col-12 mx-auto">
+         <div class="col-lg-8 col-md-8 col-sm-10 col-1 mx-auto">
               <div class="card thin-black-border px-4 mt-3 mb-3 pt-2 pb-1 background-cream">
               
                 <p class="black-font card mx-1 px-3 green-font pt-2 mt-3 mb-3 pb-5">{{post.body}}</p>
                 </div>
                 </div>
 
-              <div class="col-lg-4 col-md-4 col-sm-12 col-12">    
+              <div class="text-center col-lg-4 col-md-4 col-sm-12 col-12">    
               <div
-                class="tech-font thin-black-border card float-end background-cream black-font px-3 mt-3 mb-3 pt-2 pb-1 text-end"
+                class="tech-font d-inline-block u-name-div thin-black-border card float-end background-cream black-font px-3 mt-3 mb-3 pt-2 pb-1 text-end"
               >
                 <p class="mb-0">{{post.User.username}}</p>
                 
@@ -55,7 +55,7 @@
     <div class="card background-green thin-black-border pt-3 mt-3 mb-3 col-10 mx-auto">
       <form class="new-comment-form">
         <div class="col-5 mx-auto">
-      <h5 class='card thin-black-border background-cream tech-font pt-2 pb-2 mt-3 mb-3 mx-auto' for="comment">
+      <h5 class='card thin-black-border background-cream tech-font pt-2 pb-2 mt-3 px-2 mb-3 mx-auto' for="comment">
        Add Comment
       </h5>
       </div>
@@ -74,6 +74,6 @@
 
 </div>
 
-
+<script src="/js/card-float.js"></script>
 <script src="/js/post.js"></script>
 <script src="/js/add-comment.js"></script>

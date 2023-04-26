@@ -87,7 +87,7 @@
                 {{#each post.Comments as |comments|}}
                   <div data-id="{{post.id}}" class="col-sm-10 col-10 col-md-6 col-lg-6">
                     
-                    <div data-id="{{post.id}}" class="card black-font u-name-div background-cream px-2 pt-2 mt-3 mb-5">
+                    <div data-id="{{post.id}}" class="card black-font u-name-div data-{{post.id}} thin-black-border background-cream px-2 pt-2 mt-3 mb-5">
                            <p class="com-u-name">{{comments.User.username}}</p>
                       {{! <div class="mx-auto col-10 col-sm-10 col-md-10 col-lg-10"> }}
                       <div class="d-flex justify-content-between">
@@ -122,7 +122,7 @@
   </div>
 </div>
 
+<script src="/js/card-float.js"></script>
 <script src="/js/view-comments.js"></script>
 <script src="/js/add-post.js"></script>
 <script src="/js/homepage.js"></script>
-<script src="/js/card-float.js"></script>

@@ -18,7 +18,8 @@ async function addPostForm(event) {
     });
   
     if (response.ok) {
-      window.location.reload();
+      // window.location.reload();
+      document.location.replace('/')
     } else {
       alert('Failed to add post');
     }

@@ -16,8 +16,9 @@ async function editComment(event) {
       });
       if (responseObject.ok) {
         const commentBtn = document.querySelector('#comment-btn')
-        const postId = commentBtn.getAttribute('data-id');
-        document.location.replace(`/post/${postId}`);
+        // const postId = commentBtn.getAttribute('data-id');
+        // document.location.replace(`/post/${postId}`);
+        document.location.replace(`/`)
       } else {
         alert('Failed to edit post');
       }

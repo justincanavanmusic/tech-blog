@@ -1,9 +1,4 @@
 <div class="container-fluid background">
-        {{!-- <div class="card black-border mx-auto background-cream mb-4 col-3"> --}}
-    {{!-- <h2 class="tech-font text-center black-font mt-2 mb-2">
-      Posts
-    </h2> --}}
-    {{!-- </div> --}}
   <div class="row">
 
 
@@ -67,8 +62,6 @@
              
                 >View Comments</button>
                 {{/if}}
-
-          
               </div>
               </div>
               </div>
@@ -97,6 +90,18 @@
                           <div class="card p-2">
                             <p>{{comments.body}}</p>
                           </div>
+                                <p>{{comments.User.id}}</p>
+                             <button class="btn com-edit-btn background-red cream-font mt-3" type="submit" value="comment-submit"
+                             data-id="{{comments.id}}">
+                              Edit
+                          </button>
+                             <button class="btn background-red cream-font mt-3" type="submit" value="comment-submit"
+                             data-id="{{comments.id}}">
+                              Delete
+                          </button>
+                       
+
+                       
                         </div>
 
                    
@@ -126,3 +131,4 @@
 <script src="/js/view-comments.js"></script>
 <script src="/js/add-post.js"></script>
 <script src="/js/homepage.js"></script>
+<script src="/js/comment-btn.js"></script>

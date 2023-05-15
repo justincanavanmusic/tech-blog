@@ -39,7 +39,7 @@ const sess = {
     sameSite: 'strict',
   },
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: false,   //if true; generates new session id everytime you make a req to the server. 
   store: new SequelizeStore({
     db: sequelize
   })

@@ -23,9 +23,12 @@ router.get('/', withAuth, async (req, res) => {
     //the response renders the 'homepage.handlebars' page; we are storing the newPosts arr into a variable called "posts". we will use that variable to access the data in the handlebars page as you can see on line 1 of homepage.handlebars 
     
     const posts = postData.map((singlePost) => singlePost.get({ plain: true }));
-    console.log(posts);
+    // console.log(posts);
+   
   
     const loggedIn = req.session.loggedIn; 
+    console.log(req.session)
+    
   
   
     res.render('homepage', { posts, loggedIn }); 
@@ -119,25 +122,16 @@ res.render('edit-comment', { comment })
 router.get('/login', (req, res) => {
  const loggedIn=req.session.loggedIn;
 
+
   if (req.session.loggedIn) {
+    console.log(req.session)
     res.redirect('/');
     return;
   }
   res.render('login', { loggedIn } );
 });
 
-//same as above but for the signup page
-// router.get('/signup', (req, res) => {
-//   const loggedIn=req.session.loggedIn;
-//   // console.log(req.session)
 
-//   // if (req.session.loggedIn) {
-//   //   res.redirect('/');
-//   //   return;
-//   // }
-  
-//   res.render('signup', loggedIn );
-// });
 
 router.get('/signup', (req, res) => {
   const loggedIn = req.session.loggedIn;

@@ -12,3 +12,8 @@ document.querySelectorAll('.comment-page').forEach(btn=> {
     btn.addEventListener('click', viewCommentPage)
 })
 
+
+
+
+
+

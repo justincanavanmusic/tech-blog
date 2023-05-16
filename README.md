@@ -28,7 +28,9 @@ justincanavanmusic@gmail.com <br>
 - Northwestern Full-Stack Flex class materials <br>
 - Google and YouTube!
 
-![app screenshot](./Assets/Screenshot%202023-05-16%20at%207.40.50%20AM.png)
+![app screenshot](./Assets/Screenshot%202023-05-16%20at%208.45.50%20AM.png)
+
+![app screenshot](./Assets/Screenshot%202023-05-16%20at%208.43.57%20AM.png)
 
 ![app screenshot](./Assets/Screenshot%202023-05-16%20at%207.41.06%20AM.png)
 

@@ -20,10 +20,8 @@ router.get('/', withAuth, async (req, res) => {
     });
 
     const posts = postData.map((singlePost) => singlePost.get({ plain: true }));
-    // console.log(req.session.user_id)
+  
     let reqSesUserId = req.session.user_id
-    // console.log(typeof reqSesUserId)
-    console.log(typeof posts[0].Comments[0].User.id)
     const loggedIn = req.session.loggedIn; 
     
     res.render('homepage', { posts, loggedIn, reqSesUserId }); 
@@ -157,7 +155,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
       const posts = postData.map((post) => post.get({ plain: true }));
    
-      // console.log(postData)
       const loggedIn = req.session.loggedIn; 
       console.log(req.session);
       

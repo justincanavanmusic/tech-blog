@@ -2,24 +2,31 @@
   <div class="card-header col-md-12 text-center">
 
             {{!--EDIT post --}}
-  <div class="edit-comment-container">
-    <h2>
+  <div class="container">
+    <div class="col-4 mx-auto"> 
+    <h2 class="card black-border pt-2 pb-2 mb-4 background-cream tech-font">
       Edit Comment
     </h2>
+        </div>
+         <div class="col-12 col-sm-12 col-md-12 col-lg-8 mx-auto">
+    <div class="card thin-black-border background-cream pt-3">
     <form class="edit-comment-form">
-      <label for="comment">
+      <label class="tech-font mb-2" for="comment">
         Comment
       </label>
       <br />
-      <textarea id="body" name="body" rows="2" cols="30">{{comment.body}}</textarea>
+      <textarea class="mb-3 form-width" id="body" name="body" rows="2" >{{comment.body}}</textarea>
       <br />
      
-      <button type="submit" value="edit-submit" id="comment-btn" data-id='{{comment.post_id}}'>
+      <button type="submit" value="edit-submit" id="comment-btn" class= 'btn btn-sm background-red cream-font' data-id='{{comment.post_id}}'>
         Submit
       </button>
       
     </form>
+
     </div>
+    </div>
+      </div>
     </div>
 
 <script src="/js/post.js"></script>

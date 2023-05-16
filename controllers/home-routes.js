@@ -18,23 +18,19 @@ router.get('/', withAuth, async (req, res) => {
         }
       ]
     });
-    //loops through the postData array of objects via the .map method. this returns a new array in a more readable format using .get ({plain: true})
-    //req.session.loggedIn is a boolean which we are storing in the loggedIn variable. if true, you can access the page; if not you are directed to the login page
-    //the response renders the 'homepage.handlebars' page; we are storing the newPosts arr into a variable called "posts". we will use that variable to access the data in the handlebars page as you can see on line 1 of homepage.handlebars 
-    
+
     const posts = postData.map((singlePost) => singlePost.get({ plain: true }));
-    // console.log(posts);
-   
-  
+    // console.log(req.session.user_id)
+    let reqSesUserId = req.session.user_id
+    // console.log(typeof reqSesUserId)
+    console.log(typeof posts[0].Comments[0].User.id)
     const loggedIn = req.session.loggedIn; 
-    console.log(req.session)
     
-  
-  
-    res.render('homepage', { posts, loggedIn }); 
+    res.render('homepage', { posts, loggedIn, reqSesUserId }); 
   } catch (err) {
     res.status(500).json(err);
   }
+
 });
 
 
@@ -160,7 +156,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
   });
 
       const posts = postData.map((post) => post.get({ plain: true }));
-      console.log(posts)
+   
       // console.log(postData)
       const loggedIn = req.session.loggedIn; 
       console.log(req.session);

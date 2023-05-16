@@ -6,7 +6,6 @@ async function commentBtn(e) {
 }
 
 
-
 document.querySelectorAll('.com-edit-btn').forEach(btn => {
     btn.addEventListener('click', commentBtn)
 })

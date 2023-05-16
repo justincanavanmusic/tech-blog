@@ -90,7 +90,9 @@
                           <div class="card p-2">
                             <p>{{comments.body}}</p>
                           </div>
-                                <p>{{comments.User.id}}</p>
+                         
+                        {{#if (comparison comments.User.id ../../reqSesUserId)}}
+                          
                              <button class="btn com-edit-btn background-red cream-font mt-3" type="submit" value="comment-submit"
                              data-id="{{comments.id}}">
                               Edit
@@ -99,13 +101,16 @@
                              data-id="{{comments.id}}">
                               Delete
                           </button>
+                          
+                          {{/if}}
+                      
                        
 
                        
                         </div>
 
                    
-                        {{! </div> }}
+           
                       </div>
 
                     </div>
@@ -127,8 +132,8 @@
   </div>
 </div>
 
-<script src="/js/card-float.js"></script>
 <script src="/js/view-comments.js"></script>
 <script src="/js/add-post.js"></script>
 <script src="/js/homepage.js"></script>
 <script src="/js/comment-btn.js"></script>
+<script src="/utils/helpers.js"></script>

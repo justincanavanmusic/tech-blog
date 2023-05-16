@@ -1,4 +1,4 @@
-# tech-blog
+# CodeCove
 
 ## Description 
 
@@ -7,25 +7,31 @@ A tech-blog application designed for all tech fanatics. Our platform allows user
 Utilizes the Model-View-Controller (MVC) paradigm for its architectural structure, Handlebars.js to dynamically generate HTML content, Sequelize as the Object-Relational Mapping (ORM) tool, bcrypt for user authentication, and much more. 
 
 ## Usage
-
-View live link below:
+Live Link <br>
 https://floating-fortress-15177.herokuapp.com/
 
-![app screenshot](./Assets/Screenshot%202023-03-09%20at%206.54.51%20PM.png)
+## Instructions
+- Visit Live Link above
+- Create an account on our Sign Up page
+- Begin posting and commenting!
 
-![app screenshot](./Assets/Screenshot%202023-03-09%20at%206.55.04%20PM.png)
 
-## Questions
+## GitHub
+https://github.com/justincanavanmusic
 
-Feel free to contact me with any questions!
+## Contact
+justincanavanmusic@gmail.com <br>
 
-## Email
-justincanavanmusic@gmail.com
+- Feel free to contact me with any questions!
 
-## Github Username
-justincanavanmusic
+## Resources
+- Northwestern Full-Stack Flex class materials <br>
+- Google and YouTube!
 
-### Resources
--bootcamp materials/instruction <br>
--guidance from tutor sessions, AskBCS, office hours/extra help from instructors <br>
+![app screenshot](./Assets/Screenshot%202023-05-16%20at%207.40.50%20AM.png)
 
+![app screenshot](./Assets/Screenshot%202023-05-16%20at%207.41.06%20AM.png)
+
+![app screenshot](./Assets/Screenshot%202023-05-16%20at%207.42.01%20AM.png)
+
+![app screenshot](./Assets/Screenshot%202023-05-16%20at%207.54.35%20AM.png)
